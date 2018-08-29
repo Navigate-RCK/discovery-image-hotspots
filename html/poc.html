@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="../css/style.css">
+
+    <script type="text/javascript" src="http://code.jquery.com/jquery.min.js"></script>
+    <!--<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.2.4/foundation.min.js"></script>-->
+
+    <script>
+        $(document).ready(function () {
+            console.log("document ready");
+           $("#hs1>.pulse").click(function () {
+               console.log("pulse click");
+               console.log($(this).next());
+               $(this).next().toggle();
+               var pulse = this;
+               var offset = $(pulse).offset();
+               console.log(offset);
+               console.log($(window).scrollTop());
+           })
+        });
+    </script>
+
+    <title>Title</title>
+</head>
+<body>
+
+<!--<div class="image-background"></div>-->
+
+<div class="interactive-hero-block">
+    <div class="interactive-left"></div>
+    <div class="interactive-center">
+        <img src="../assets/iPhone5.png" alt="iphone-image" class="main-image">
+        <div class="image-overlay">
+            <div class="hotspot-container" id="hs1">
+                <div class="pulse"></div>
+                <div class="hs-content hs-hidden">Content goes here</div>
+            </div>
+            <div class="pulse" id="hs2"></div>
+            <div class="pulse" id="hs3"></div>
+            <div class="pulse" id="hs4"></div>
+            <div class="pulse" id="hs5"></div>
+            <div class="pulse" id="hs6"></div>
+        </div>
+    </div>
+    <div class="interactive-right"></div>
+</div>
+
+
+
+</body>
+</html>
