@@ -1,12 +1,8 @@
-body {
-  font-family: "Open Sans", sans-serif;
-  color: #015498;
-}
-
 .interactive-hero-block {
   display: flex;
   align-items: stretch;
   background: darkseagreen;
+  color: #015498;
 }
 .interactive-hero-block .interactive-left {
   width: 100%;
@@ -19,6 +15,7 @@ body {
   width: 100%;
   max-width: 600px;
   height: auto;
+  min-width: 300px;
 }
 .interactive-hero-block .interactive-center .image-overlay {
   width: 100%;
@@ -29,16 +26,59 @@ body {
 .interactive-hero-block .interactive-center .image-overlay .hotspot-container {
   position: absolute;
 }
-.interactive-hero-block .interactive-center .image-overlay .hotspot-container .hs-content {
-  position: fixed;
-  width: 70vw;
+.interactive-hero-block .interactive-center .image-overlay .hotspot-container .hs-popup {
+  position: absolute;
+  width: 235px;
   background: white;
-  padding: 2em;
   box-shadow: 0px 0px 17px 2px rgba(0, 0, 0, 0.4);
-  border-radius: 5px;
   margin: 5% auto;
   left: 0;
   right: 0;
+  z-index: 1;
+}
+.interactive-hero-block .interactive-center .image-overlay .hotspot-container .hs-popup.pos-left {
+  left: 3em;
+}
+.interactive-hero-block .interactive-center .image-overlay .hotspot-container .hs-popup.pos-left.one {
+  top: -10em;
+}
+.interactive-hero-block .interactive-center .image-overlay .hotspot-container .hs-popup.pos-left.two {
+  top: -20em;
+}
+.interactive-hero-block .interactive-center .image-overlay .hotspot-container .hs-popup.pos-right {
+  left: -16.5em;
+}
+.interactive-hero-block .interactive-center .image-overlay .hotspot-container .hs-popup.pos-right.one {
+  top: -10em;
+}
+.interactive-hero-block .interactive-center .image-overlay .hotspot-container .hs-popup.pos-right.two {
+  top: -20em;
+}
+.interactive-hero-block .interactive-center .image-overlay .hotspot-container .hs-popup .header {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 0.5em;
+}
+.interactive-hero-block .interactive-center .image-overlay .hotspot-container .hs-popup .header i {
+  font-size: 20px;
+  padding: 0.5em;
+  cursor: pointer;
+}
+.interactive-hero-block .interactive-center .image-overlay .hotspot-container .hs-popup .content {
+  padding: 0 1em;
+}
+.interactive-hero-block .interactive-center .image-overlay .hotspot-container .hs-popup .footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1em;
+}
+.interactive-hero-block .interactive-center .image-overlay .hotspot-container .hs-popup .footer i {
+  cursor: pointer;
+  font-size: 20px;
+}
+.interactive-hero-block .interactive-center .image-overlay .hotspot-container .hs-popup .accordion-content {
+  display: none;
 }
 .interactive-hero-block .interactive-center .image-overlay .hotspot-container .hs-hidden {
   display: none;
@@ -46,13 +86,23 @@ body {
 .interactive-hero-block .interactive-center .image-overlay .hotspot-container .pulse:hover {
   background-color: #015498;
 }
+.interactive-hero-block .interactive-center .image-overlay .hotspot-container .pulse:hover i {
+  color: #ffff;
+}
 .interactive-hero-block .interactive-center .image-overlay .hotspot-container .pulse {
-  width: 1em;
-  height: 1em;
+  width: 1.5em;
+  height: 1.5em;
   border-radius: 50%;
   background-color: #ffff;
   cursor: pointer;
   position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.interactive-hero-block .interactive-center .image-overlay .hotspot-container .pulse i {
+  font-size: 1em;
+  font-weight: 600;
 }
 .interactive-hero-block .interactive-center .image-overlay .hotspot-container .pulse:before,
 .interactive-hero-block .interactive-center .image-overlay .hotspot-container .pulse:after {
@@ -73,15 +123,15 @@ body {
 }
 .interactive-hero-block .interactive-center .image-overlay #hs1 {
   top: 20%;
-  left: 0%;
+  left: -5%;
 }
 .interactive-hero-block .interactive-center .image-overlay #hs2 {
   top: 45%;
-  left: 0;
+  left: -5%;
 }
 .interactive-hero-block .interactive-center .image-overlay #hs3 {
   top: 70%;
-  left: 0%;
+  left: -5%;
 }
 .interactive-hero-block .interactive-center .image-overlay #hs4 {
   top: 20%;
@@ -101,46 +151,47 @@ body {
 }
 
 /******************************************* MEDIA QUERIES: START ************************************************/
-@media screen and (min-width: 480px) {
-  .interactive-hero-block .interactive-center .image-overlay .hotspot-container .hs-content {
+@media screen and (min-width: 769px) {
+  .interactive-hero-block .interactive-center .image-overlay .hotspot-container .hs-popup {
     top: 2em;
     width: 20vw;
     position: absolute;
   }
-  .interactive-hero-block .interactive-center .image-overlay .hotspot-container .hs-content.pos-left {
-    top: 0;
-    left: -20vw;
+  .interactive-hero-block .interactive-center .image-overlay .hotspot-container .hs-popup.pos-left {
+    left: -26vw;
   }
-  .interactive-hero-block .interactive-center .image-overlay .hotspot-container .hs-content.pos-right {
+  .interactive-hero-block .interactive-center .image-overlay .hotspot-container .hs-popup.pos-left.zero {
     top: 0;
-    left: -8vw;
   }
-}
-@media screen and (min-width: 640px) {
-  .interactive-hero-block .interactive-center .image-overlay .hotspot-container .hs-content {
-    top: 2em;
-    width: 20vw;
-    position: absolute;
-  }
-  .interactive-hero-block .interactive-center .image-overlay .hotspot-container .hs-content.pos-left {
+  .interactive-hero-block .interactive-center .image-overlay .hotspot-container .hs-popup.pos-left.one {
     top: 0;
-    left: -32vw;
   }
-  .interactive-hero-block .interactive-center .image-overlay .hotspot-container .hs-content.pos-right {
+  .interactive-hero-block .interactive-center .image-overlay .hotspot-container .hs-popup.pos-left.two {
     top: 0;
+  }
+  .interactive-hero-block .interactive-center .image-overlay .hotspot-container .hs-popup.pos-right {
     left: 3.5vw;
+  }
+  .interactive-hero-block .interactive-center .image-overlay .hotspot-container .hs-popup.pos-right.zero {
+    top: 0;
+  }
+  .interactive-hero-block .interactive-center .image-overlay .hotspot-container .hs-popup.pos-right.one {
+    top: 0;
+  }
+  .interactive-hero-block .interactive-center .image-overlay .hotspot-container .hs-popup.pos-right.two {
+    top: 0;
   }
 }
 @media screen and (min-width: 1400px) {
-  .interactive-hero-block .interactive-center .image-overlay .hotspot-container .hs-content {
+  .interactive-hero-block .interactive-center .image-overlay .hotspot-container .hs-popup {
     top: 2em;
     width: 20vw;
   }
-  .interactive-hero-block .interactive-center .image-overlay .hotspot-container .hs-content.pos-left {
+  .interactive-hero-block .interactive-center .image-overlay .hotspot-container .hs-popup.pos-left {
     top: 0;
     left: -26vw;
   }
-  .interactive-hero-block .interactive-center .image-overlay .hotspot-container .hs-content.pos-right {
+  .interactive-hero-block .interactive-center .image-overlay .hotspot-container .hs-popup.pos-right {
     top: 0;
     left: 3vw;
   }
