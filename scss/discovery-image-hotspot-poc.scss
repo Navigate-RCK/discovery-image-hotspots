@@ -1,15 +1,16 @@
-$pulse-color: #ffff;
+$pulse-color: #ffffff;
+$pulse-ripple: #0177BF;
 $content-font: #015498;
 
 .interactive-hero-block {
   display: flex;
   align-items: stretch;
-  background: darkseagreen;
+  //background: #e69494;
   color: $content-font;
 
   .interactive-left {
     width: 100%;
-    background: burlywood;
+    //background: burlywood;
   }
 
   .interactive-center {
@@ -17,7 +18,7 @@ $content-font: #015498;
 
     .main-image {
       width: 100%;
-      max-width: 600px;
+      //max-width: 600px;
       height: auto;
       min-width: 300px;
       //position: absolute;
@@ -29,96 +30,63 @@ $content-font: #015498;
       height: 100%;
       position: absolute;
       top: 0;
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
       //background-color: rgba(188,143,143, 0.5);
+
+      .hs-popup {
+        width: 55%;
+        background: white;
+        box-shadow: 0px 0px 17px 2px rgba(0, 0, 0, 0.4);
+        //border-radius: 5px;
+        //margin: 0 auto;
+        margin-left: 3px;
+        margin-top: 20%;
+        left: 0;
+        right: 0;
+        z-index: 1;
+
+        &.hs-hidden {
+          display: none;
+        }
+
+        .header {
+          display: flex;
+          justify-content: flex-end;
+          margin-bottom: 0.5em;
+
+          i {
+            font-size: 20px;
+            padding: 0.5em;
+            cursor: pointer;
+          }
+        }
+
+        .content {
+          padding: 0 1em;
+        }
+
+        .footer {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          padding: 1em;
+
+          i {
+            cursor: pointer;
+            font-size: 20px;
+          }
+        }
+
+        .accordion-content {
+          display: none;
+        }
+      }
+
 
       .hotspot-container {
         position: absolute;
-
-        .hs-popup {
-          position: absolute;
-          width: 235px;
-          background: white;
-          box-shadow: 0px 0px 17px 2px rgba(0, 0, 0, 0.4);
-          //border-radius: 5px;
-          margin: 5% auto;
-          left: 0;
-          right: 0;
-          z-index: 1;
-
-          &.pos-left {
-            left: 3em;
-
-            &.zero {
-
-            }
-
-            &.one {
-              top: -10em;
-            }
-
-            &.two {
-              top: -20em;
-            }
-
-          }
-
-          &.pos-right {
-            left: -16.5em;
-
-            &.zero {
-
-            }
-
-            &.one {
-              top: -10em;
-            }
-
-            &.two {
-              top: -20em;
-            }
-          }
-
-          > * {
-            //padding-left: 1em;
-            //padding-right: 1em;
-          }
-
-          .header {
-            display: flex;
-            justify-content: flex-end;
-            margin-bottom: 0.5em;
-
-            i {
-              font-size: 20px;
-              padding: 0.5em;
-              cursor: pointer;
-            }
-          }
-
-          .content {
-            padding: 0 1em;
-          }
-
-          .footer {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 1em;
-
-            i {
-              cursor: pointer;
-              font-size: 20px;
-            }
-          }
-
-          .accordion-content {
-            display: none;
-          }
-        }
-
-        .hs-hidden {
-          display: none;
-        }
 
         .pulse:hover {
           background-color: $content-font;
@@ -132,10 +100,11 @@ $content-font: #015498;
         }
 
         .pulse {
-          width: 1.5em;
-          height: 1.5em;
+          width: 2em;
+          height: 2em;
           border-radius: 50%;
           background-color: $pulse-color;
+          border: 1px solid $content-font;
           cursor: pointer;
           position: absolute;
           display: flex;
@@ -155,11 +124,11 @@ $content-font: #015498;
           display: block;
           position: absolute;
           border-radius: 50%;
-          border: 1px solid $pulse-color;
-          left: -1em;
-          right: -1em;
-          top: -1em;
-          bottom: -1em;
+          border: 1px solid $content-font;
+          left: -0.8em;
+          right: -0.8em;
+          top: -0.8em;
+          bottom: -0.8em;
           animation: pulse-animate 3s linear infinite;
           opacity: 0;
         }
@@ -171,34 +140,34 @@ $content-font: #015498;
 
       #hs1 {
         top: 20%;
-        left: -5%;
+        left: 10%;
       }
 
       #hs2 {
         top: 45%;
-        left: -5%;
+        left: 10%;
       }
 
       #hs3 {
         top: 70%;
-        left: -5%;
+        left: 10%;
       }
 
       #hs4 {
         top: 20%;
-        left: 95%;
+        left: 80%;
 
       }
 
       #hs5 {
         top: 45%;
-        left: 95%;
+        left: 80%;
 
       }
 
       #hs6 {
         top: 70%;
-        left: 95%;
+        left: 80%;
 
       }
     }
@@ -206,7 +175,7 @@ $content-font: #015498;
 
   .interactive-right {
     width: 100%;
-    background: cadetblue;
+    //background: cadetblue;
   }
 }
 
@@ -323,7 +292,7 @@ $content-font: #015498;
 
             &.pos-right {
               //top: 0;
-              left: 3.5vw;
+              left: 8.5vw;
 
               &.zero {
                 top: 0;
@@ -383,77 +352,78 @@ $content-font: #015498;
 
 }
 
-@media screen and (min-width: 1400px) {
 
-  .interactive-hero-block {
-
-    .interactive-left {
-    }
-
-    .interactive-center {
-      .main-image {
-      }
-
-      .image-overlay {
-
-        .hotspot-container {
-          .hs-popup {
-            top: 2em;
-            width: 20vw;
-
-            &.pos-left {
-              top: 0;
-              left: -26vw;
-            }
-
-            &.pos-right {
-              top: 0;
-              left: 3vw;
-            }
-          }
-
-          .hs-hidden {
-          }
-
-          .pulse:hover {
-          }
-
-          .pulse {
-          }
-
-          .pulse:before,
-          .pulse:after {
-          }
-
-          .pulse:after {
-          }
-        }
-
-        #hs1 {
-        }
-
-        #hs2 {
-        }
-
-        #hs3 {
-        }
-
-        #hs4 {
-        }
-
-        #hs5 {
-        }
-
-        #hs6 {
-        }
-      }
-    }
-
-    .interactive-right {
-    }
-  }
-
-}
+//@media screen and (min-width: 1400px) {
+//
+//  .interactive-hero-block {
+//
+//    .interactive-left {
+//    }
+//
+//    .interactive-center {
+//      .main-image {
+//      }
+//
+//      .image-overlay {
+//
+//        .hotspot-container {
+//          .hs-popup {
+//            top: 2em;
+//            width: 20vw;
+//
+//            &.pos-left {
+//              top: 0;
+//              left: -26vw;
+//            }
+//
+//            &.pos-right {
+//              top: 0;
+//              left: 3vw;
+//            }
+//          }
+//
+//          .hs-hidden {
+//          }
+//
+//          .pulse:hover {
+//          }
+//
+//          .pulse {
+//          }
+//
+//          .pulse:before,
+//          .pulse:after {
+//          }
+//
+//          .pulse:after {
+//          }
+//        }
+//
+//        #hs1 {
+//        }
+//
+//        #hs2 {
+//        }
+//
+//        #hs3 {
+//        }
+//
+//        #hs4 {
+//        }
+//
+//        #hs5 {
+//        }
+//
+//        #hs6 {
+//        }
+//      }
+//    }
+//
+//    .interactive-right {
+//    }
+//  }
+//
+//}
 
 /******************************************* MEDIA QUERIES: END ************************************************/
 
