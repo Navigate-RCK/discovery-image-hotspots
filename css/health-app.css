@@ -1,0 +1,193 @@
+.phone-background {
+  background-image: url("../assets/iphone_homescreen.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: scroll;
+  background-position: left top;
+  height: 100vh;
+}
+.phone-background .phone-content {
+  height: 100%;
+  display: inline-block;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+#main {
+  width: 800px;
+  height: 300px;
+  margin: auto;
+}
+
+#outer-circle {
+  -webkit-box-shadow: 0 0 50px 10px #453D9B;
+  -moz-box-shadow: 0 0 50px 10px #453D9B;
+  box-shadow: 0 0 50px 10px #453D9B;
+  border: 10px solid #ECEBFA;
+  border-top-color: #746EBB;
+  margin: 20% auto;
+  text-align: center;
+  width: 220px;
+  height: 220px;
+  -webkit-border-radius: 220px;
+  -moz-border-radius: 220px;
+  border-radius: 220px;
+  -webkit-animation: turning_cw 5s infinite;
+  -moz-animation: turning_cw 5s infinite;
+  animation: turning_cw 5s infinite;
+  position: absolute;
+  left: 290px;
+  opacity: 1;
+}
+
+#outer-circle:hover {
+  -webkit-box-shadow: 0 0 100px 15px #453D9B;
+  -moz-box-shadow: 0 0 100px 15px #453D9B;
+  box-shadow: 0 0 100px 15px #453D9B;
+}
+
+#inner-circle {
+  border: 10px solid #ECEBFA;
+  border-left-color: #746EBB;
+  border-right-color: #746EBB;
+  -webkit-transform: rotate(360deg);
+  -moz-transform: rotate(360deg);
+  transform: rotate(360deg);
+  position: absolute;
+  left: 300px;
+  top: 170px;
+  margin: 10px;
+  width: 180px;
+  height: 180px;
+  -webkit-border-radius: 180px;
+  -moz-border-radius: 180px;
+  border-radius: 180px;
+  -webkit-animation: turning_acw 3s infinite;
+  -moz-animation: turning_acw 3s infinite;
+  animation: turning_acw 3s infinite;
+}
+
+#center-circle {
+  border: 10px solid #746EBB;
+  border-left-color: #ECEBFA;
+  border-right-color: #ECEBFA;
+  -webkit-transform: rotate(360deg);
+  -moz-transform: rotate(360deg);
+  transform: rotate(360deg);
+  position: absolute;
+  top: 190px;
+  left: 315px;
+  margin: 10px;
+  width: 150px;
+  height: 150px;
+  -webkit-border-radius: 140px;
+  -moz-border-radius: 140px;
+  border-radius: 140px;
+  -webkit-animation: turning_cw 5s infinite;
+  -moz-animation: turning_cw 5s infinite;
+  animation: turning_cw 5s infinite;
+}
+
+#content {
+  position: absolute;
+  top: 220px;
+  left: 350px;
+  width: 120px;
+  height: 120px;
+  -webkit-border-radius: 140px;
+  -moz-border-radius: 140px;
+  border-radius: 140px;
+  background: #2E2A69;
+  text-align: center;
+  line-height: 120px;
+  font-size: 4em;
+  color: #746EBB;
+  text-shadow: 0 2px 2px #000;
+  font-weight: bold;
+}
+
+@-webkit-keyframes aura {
+  0% {
+    text-shadow: 0 2px 2px #000;
+  }
+  50% {
+    text-shadow: 0 10px 10px #000;
+    line-height: 190px;
+  }
+  100% {
+    text-shadow: 0 2px 10px #000;
+  }
+}
+@-webkit-keyframes turning_cw {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+@-webkit-keyframes turning_acw {
+  0% {
+    -webkit-transform: rotate(360deg);
+  }
+  100% {
+    -webkit-transform: rotate(0deg);
+  }
+}
+@-moz-keyframes aura {
+  0% {
+    text-shadow: 0 2px 2px #000;
+  }
+  50% {
+    text-shadow: 0 10px 10px #000;
+    line-height: 190px;
+  }
+  100% {
+    text-shadow: 0 2px 10px #000;
+  }
+}
+@-moz-keyframes turning_cw {
+  0% {
+    -moz-transform: rotate(0deg);
+  }
+  100% {
+    -moz-transform: rotate(360deg);
+  }
+}
+@-moz-keyframes turning_acw {
+  0% {
+    -moz-transform: rotate(360deg);
+  }
+  100% {
+    -moz-transform: rotate(0deg);
+  }
+}
+@keyframes aura {
+  0% {
+    text-shadow: 0 2px 2px #000;
+  }
+  50% {
+    text-shadow: 0 10px 10px #000;
+    line-height: 190px;
+  }
+  100% {
+    text-shadow: 0 2px 10px #000;
+  }
+}
+@keyframes turning_cw {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes turning_acw {
+  0% {
+    transform: rotate(360deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+/*# sourceMappingURL=health-app.css.map */
