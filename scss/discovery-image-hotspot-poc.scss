@@ -2,11 +2,26 @@ $pulse-color: #ffffff;
 $pulse-ripple: #0177BF;
 $content-font: #015498;
 
+$vitality-grey: #3B3B3B;
+$vitality-grey-border: #707070;
+$vitality-orange: #CB4E00;
+
+.image-overlay {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+
 .interactive-hero-block {
   display: flex;
   align-items: stretch;
   //background: #e69494;
   color: $content-font;
+  font-family: 'Open Sans', sans-serif;
 
   .interactive-left {
     width: 100%;
@@ -20,7 +35,7 @@ $content-font: #015498;
       width: 100%;
       //max-width: 600px;
       height: auto;
-      min-width: 300px;
+      min-width: 350px;
       //position: absolute;
       //z-index: -1;
     }
@@ -35,14 +50,24 @@ $content-font: #015498;
       justify-content: center;
       //background-color: rgba(188,143,143, 0.5);
 
+      //.hs-popup:hover {
+      //  background: $vitality-grey;
+      //  color: white;
+      //
+      //  .heading-underline {
+      //    background-color: white;
+      //  }
+      //}
+
       .hs-popup {
         width: 55%;
         background: white;
-        box-shadow: 0px 0px 17px 2px rgba(0, 0, 0, 0.4);
+        color: $vitality-grey;
+        box-shadow: 3px 5px 24px 1px rgba(0, 0, 0, 0.2);
         //border-radius: 5px;
         //margin: 0 auto;
         margin-left: 3px;
-        margin-top: 20%;
+        margin-top: 15%;
         left: 0;
         right: 0;
         z-index: 1;
@@ -53,40 +78,208 @@ $content-font: #015498;
 
         .header {
           display: flex;
-          justify-content: flex-end;
-          margin-bottom: 0.5em;
+          justify-content: space-between;
+          align-items: center;
+          //margin-bottom: 0.5em;
 
-          i {
-            font-size: 20px;
-            padding: 0.5em;
+          .index {
+            padding: 1em 1.5em;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+          }
+
+          .close-button {
+            font-size: 1em;
+            font-weight: 800;
+            padding: 1em 1.5em;
             cursor: pointer;
           }
         }
 
         .content {
-          padding: 0 1em;
+          //padding: 0 1.5em;
+          //margin-bottom: 1em;
+
+          .heading {
+            font-weight: 600;
+            padding: 0 1.5em;
+          }
+
+          .heading-divider {
+            width: 1.75em;
+            height: 0.2em;
+            background: $vitality-grey;
+            margin: 0 1.5em;
+            margin-bottom: 1em;
+            margin-top: 0.5em;
+          }
+
+          .accordion-container {
+            display: none;
+
+            .accordion-content {
+              max-height: 70vw;
+              overflow-y: auto;
+              padding: 0 1.5em;
+              margin-bottom: 1em;
+              margin-top: 0.8em;
+              margin-right: 1em;
+
+              &.has-visual {
+                max-height: 35vw;
+              }
+            }
+
+            .accordion-content::-webkit-scrollbar,
+            .accordion-content::-webkit-scrollbar-thumb,
+            .accordion-content::-webkit-scrollbar-track {
+              width: 8px;
+              border: none;
+              //background-transparent;
+            }
+
+            .accordion-content::-webkit-scrollbar-button,
+            .accordion-content::-webkit-scrollbar-track-piece,
+            .accordion-content::-webkit-scrollbar-corner,
+            .accordion-content::-webkit-resizer {
+              display: none;
+            }
+
+            .accordion-content::-webkit-scrollbar-thumb {
+              border-radius: 6px;
+              background-color: $vitality-grey;
+            }
+
+            .accordion-content::-webkit-scrollbar-track {
+              background-image: url("http://navigatehost.co.za/digital_discovery/custom-dev/image-hotspot/assets/scroll-track.png");
+              background-repeat: repeat-y;
+              background-size: contain;
+            }
+
+            .visual-container {
+              height: 35vw;
+              background-color: $vitality-grey-border;
+            }
+
+          }
+
         }
 
         .footer {
           display: flex;
           align-items: center;
           justify-content: center;
-          padding: 1em;
 
-          i {
-            cursor: pointer;
-            font-size: 20px;
+          .accordion-icon-container {
+            position: absolute;
+
+            .accordion-icon {
+              cursor: pointer;
+              font-size: 1em;
+              font-weight: 800;
+              padding: 0.8em;
+              left: -0.8em;
+              position: absolute;
+              //top: -1em;
+              color: white;
+              background: $vitality-grey;
+              border-radius: 100%;
+              text-align: center;
+              top: -1.4em;
+              line-height: 1;
+
+
+              //display: none;
+            }
+
+            .accordion-icon:hover {
+              background: $vitality-orange;
+            }
           }
-        }
-
-        .accordion-content {
-          display: none;
         }
       }
 
 
       .hotspot-container {
         position: absolute;
+
+        .pulse-vitality {
+          width: 1.5em;
+          height: 1.5em;
+          border-radius: 50%;
+          color: white;
+          cursor: pointer;
+          position: absolute;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
+          .pulse-label {
+            font-size: 0.8em;
+            font-weight: 600;
+            z-index: 1;
+          }
+        }
+
+        .pulse-vitality:before,
+        .pulse-vitality:after {
+          //z-index: -1;
+          content: '';
+          display: block;
+          position: absolute;
+          border-radius: 50%;
+          //border: 1px solid $content-font;
+          left: -0.6em;
+          right: -0.6em;
+          top: -0.6em;
+          bottom: -0.6em;
+          -webkit-transition-property: -webkit-transform;
+          -webkit-transition-duration: 1s;
+          -moz-transition-property: -moz-transform;
+          -moz-transition-duration: 1s;
+          -webkit-animation-name: grow;
+          -webkit-animation-duration: 2s;
+          -webkit-animation-iteration-count: infinite;
+          -webkit-animation-timing-function: linear;
+          -moz-animation-name: grow;
+          -moz-animation-duration: 2s;
+          -moz-animation-iteration-count: infinite;
+          -moz-animation-timing-function: linear;
+
+          transition-property: -moz-transform;
+          transition-duration: 1s;
+          animation-name: grow;
+          animation-duration: 2s;
+          animation-iteration-count: infinite;
+          animation-timing-function: linear;
+          opacity: 1;
+        }
+
+        .pulse-vitality-selected {
+          //width: 2.5em;
+          //height: 2.5em;
+          //background-color: $vitality-orange;
+
+          .pulse-label {
+            font-size: 0.8em;
+            font-weight: 600;
+            z-index: 1;
+          }
+        }
+
+        .pulse-vitality-selected:before,
+        .pulse-vitality-selected:after {
+          //z-index: -1;
+          content: '';
+          display: block;
+          position: absolute;
+          border-radius: 50%;
+          //border: 1px solid $content-font;
+          animation: none;
+          background-color: $vitality-orange;
+          //opacity: 0;
+        }
+
 
         .pulse:hover {
           background-color: $content-font;
@@ -140,34 +333,34 @@ $content-font: #015498;
 
       #hs1 {
         top: 20%;
-        left: 10%;
+        left: 12%;
       }
 
       #hs2 {
         top: 45%;
-        left: 10%;
+        left: 12%;
       }
 
       #hs3 {
         top: 70%;
-        left: 10%;
+        left: 12%;
       }
 
       #hs4 {
         top: 20%;
-        left: 80%;
+        left: 82%;
 
       }
 
       #hs5 {
         top: 45%;
-        left: 80%;
+        left: 82%;
 
       }
 
       #hs6 {
         top: 70%;
-        left: 80%;
+        left: 82%;
 
       }
     }
@@ -272,6 +465,27 @@ $content-font: #015498;
             top: 2em;
             width: 20vw;
             position: absolute;
+
+            .content {
+
+              .accordion-content {
+                max-height: 20vw;
+
+                &.has-visual {
+                  max-height: 15vw;
+                }
+              }
+
+              .visual-container {
+                height: 15vw;
+              }
+            }
+
+            .footer {
+              .accordion-icon {
+              }
+
+            }
 
             &.pos-left {
               //top: 0;
@@ -444,6 +658,119 @@ $content-font: #015498;
     transform: scale(1.2);
     opacity: 0;
   }
+}
+
+@-webkit-keyframes grow {
+  0% {
+    transform: scale(1);
+    background-color: $vitality-grey;
+    //opacity: 0.75;
+  }
+
+  40% {
+    background-color: $vitality-grey;
+    //opacity: 0.75;
+  }
+
+  50% {
+    transform: scale(1.25);
+    background-color: $vitality-orange;
+    //opacity: 0.75;
+  }
+
+  80% {
+    background-color: $vitality-grey;
+    //opacity: 0.75;
+  }
+
+  100% {
+    transform: scale(1);
+    background-color: $vitality-grey;
+    //opacity: 0;
+  }
+
+  //from {
+  //  -webkit-transform:scale(1);
+  //}
+  //to {
+  //  -webkit-transform:scale(1.5);
+  //  background-color: $vitality-orange;
+  //
+  //}
+}
+@-moz-keyframes grow {
+  0% {
+    transform: scale(1);
+    background-color: $vitality-grey;
+    //opacity: 0.75;
+  }
+
+  40% {
+    background-color: $vitality-grey;
+    //opacity: 0.75;
+  }
+
+  50% {
+    transform: scale(1.25);
+    background-color: $vitality-orange;
+    //opacity: 0.75;
+  }
+
+  80% {
+    background-color: $vitality-grey;
+    //opacity: 0.75;
+  }
+
+  100% {
+    transform: scale(1);
+    background-color: $vitality-grey;
+    //opacity: 0;
+  }
+
+  //from {
+  //  -moz-transform:scale(1);
+  //}
+  //to {
+  //  -moz-transform:scale(1.5);
+  //  background-color: $vitality-orange;
+  //}
+}
+@keyframes grow {
+  0% {
+    transform: scale(1);
+    background-color: $vitality-grey;
+    //opacity: 0.75;
+  }
+
+  40% {
+    background-color: $vitality-grey;
+    //opacity: 0.75;
+  }
+
+  50% {
+    transform: scale(1.25);
+    background-color: $vitality-orange;
+    //opacity: 0.75;
+  }
+
+  80% {
+    background-color: $vitality-grey;
+    //opacity: 0.75;
+  }
+
+  100% {
+    transform: scale(1);
+    background-color: $vitality-grey;
+    //opacity: 0;
+  }
+
+  //from {
+  //  transform:scale(1);
+  //}
+  //to {
+  //  transform:scale(1.5);
+  //  background-color: $vitality-orange;
+  //}
 }
 
 /******************************************* ANIMATIONS: END ************************************************/
