@@ -69,7 +69,7 @@ jQuery(document).ready(function ($) {
 
     });
 
-    $(".hs-popup>.header>i").click(function () {
+    $(".hs-popup>.rck-header>i").click(function () {
         var popupContainer = $(this).parent().parent();
         var popupId = $(popupContainer).attr("data-popup-id");
         var pulseSelector = `.pulse-vitality[data-popup-id="${popupId}"]`;
@@ -78,9 +78,9 @@ jQuery(document).ready(function ($) {
     });
 
     $(".accordion-toggle").click(function () {
-        $(this).closest(".footer").prev().find(".accordion-container").slideToggle("fast");
+        $(this).closest(".rck-footer").prev().find(".rck-accordion-container").slideToggle("fast");
         $(this).find("i").toggleClass("ti-plus").toggleClass("ti-minus");
-        $(this).closest(".footer").prev().find(".heading-divider").toggle();
+        $(this).closest(".rck-footer").prev().find(".rck-heading-divider").toggle();
         // $(this).find("i").toggleClass("ti-plus").toggleClass("ti-minus");
         // $(this).next().slideToggle("fast");
     });
@@ -113,7 +113,7 @@ jQuery(document).ready(function ($) {
 
     function movePopupsForMobile() {
         $(".hs-popup").each(function () {
-            var parent2 = $(this).parents(".image-overlay");
+            var parent2 = $(this).parents(".rck-image-overlay");
             var currentEl = $(this).detach();
             // console.log(parent2);
             // console.log(currentEl);

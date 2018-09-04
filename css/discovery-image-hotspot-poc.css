@@ -1,4 +1,4 @@
-.image-overlay {
+.rck-image-overlay {
   width: 100%;
   height: 100%;
   position: absolute;
@@ -25,7 +25,7 @@
   height: auto;
   min-width: 350px;
 }
-.interactive-hero-block .interactive-center .image-overlay {
+.interactive-hero-block .interactive-center .rck-image-overlay {
   width: 100%;
   height: 100%;
   position: absolute;
@@ -34,7 +34,7 @@
   align-items: flex-start;
   justify-content: center;
 }
-.interactive-hero-block .interactive-center .image-overlay .hs-popup {
+.interactive-hero-block .interactive-center .rck-image-overlay .hs-popup {
   width: 55%;
   background: white;
   color: #3B3B3B;
@@ -45,30 +45,30 @@
   right: 0;
   z-index: 1;
 }
-.interactive-hero-block .interactive-center .image-overlay .hs-popup.hs-hidden {
+.interactive-hero-block .interactive-center .rck-image-overlay .hs-popup.hs-hidden {
   display: none;
 }
-.interactive-hero-block .interactive-center .image-overlay .hs-popup .header {
+.interactive-hero-block .interactive-center .rck-image-overlay .hs-popup .rck-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-.interactive-hero-block .interactive-center .image-overlay .hs-popup .header .index {
+.interactive-hero-block .interactive-center .rck-image-overlay .hs-popup .rck-header .index {
   padding: 1em 1.5em;
   font-weight: 600;
   letter-spacing: 0.05em;
 }
-.interactive-hero-block .interactive-center .image-overlay .hs-popup .header .close-button {
+.interactive-hero-block .interactive-center .rck-image-overlay .hs-popup .rck-header .rck-close-button {
   font-size: 1em;
   font-weight: 800;
   padding: 1em 1.5em;
   cursor: pointer;
 }
-.interactive-hero-block .interactive-center .image-overlay .hs-popup .content .heading {
+.interactive-hero-block .interactive-center .rck-image-overlay .hs-popup .rck-content .rck-heading {
   font-weight: 600;
   padding: 0 1.5em;
 }
-.interactive-hero-block .interactive-center .image-overlay .hs-popup .content .heading-divider {
+.interactive-hero-block .interactive-center .rck-image-overlay .hs-popup .rck-content .rck-heading-divider {
   width: 1.75em;
   height: 0.2em;
   background: #3B3B3B;
@@ -76,10 +76,10 @@
   margin-bottom: 1em;
   margin-top: 0.5em;
 }
-.interactive-hero-block .interactive-center .image-overlay .hs-popup .content .accordion-container {
+.interactive-hero-block .interactive-center .rck-image-overlay .hs-popup .rck-content .rck-accordion-container {
   display: none;
 }
-.interactive-hero-block .interactive-center .image-overlay .hs-popup .content .accordion-container .accordion-content {
+.interactive-hero-block .interactive-center .rck-image-overlay .hs-popup .rck-content .rck-accordion-container .rck-accordion-content {
   max-height: 70vw;
   overflow-y: auto;
   padding: 0 1.5em;
@@ -87,43 +87,43 @@
   margin-top: 0.8em;
   margin-right: 1em;
 }
-.interactive-hero-block .interactive-center .image-overlay .hs-popup .content .accordion-container .accordion-content.has-visual {
+.interactive-hero-block .interactive-center .rck-image-overlay .hs-popup .rck-content .rck-accordion-container .rck-accordion-content.rck-has-visual {
   max-height: 35vw;
 }
-.interactive-hero-block .interactive-center .image-overlay .hs-popup .content .accordion-container .accordion-content::-webkit-scrollbar,
-.interactive-hero-block .interactive-center .image-overlay .hs-popup .content .accordion-container .accordion-content::-webkit-scrollbar-thumb,
-.interactive-hero-block .interactive-center .image-overlay .hs-popup .content .accordion-container .accordion-content::-webkit-scrollbar-track {
+.interactive-hero-block .interactive-center .rck-image-overlay .hs-popup .rck-content .rck-accordion-container .rck-accordion-content::-webkit-scrollbar,
+.interactive-hero-block .interactive-center .rck-image-overlay .hs-popup .rck-content .rck-accordion-container .rck-accordion-content::-webkit-scrollbar-thumb,
+.interactive-hero-block .interactive-center .rck-image-overlay .hs-popup .rck-content .rck-accordion-container .rck-accordion-content::-webkit-scrollbar-track {
   width: 8px;
   border: none;
 }
-.interactive-hero-block .interactive-center .image-overlay .hs-popup .content .accordion-container .accordion-content::-webkit-scrollbar-button,
-.interactive-hero-block .interactive-center .image-overlay .hs-popup .content .accordion-container .accordion-content::-webkit-scrollbar-track-piece,
-.interactive-hero-block .interactive-center .image-overlay .hs-popup .content .accordion-container .accordion-content::-webkit-scrollbar-corner,
-.interactive-hero-block .interactive-center .image-overlay .hs-popup .content .accordion-container .accordion-content::-webkit-resizer {
+.interactive-hero-block .interactive-center .rck-image-overlay .hs-popup .rck-content .rck-accordion-container .rck-accordion-content::-webkit-scrollbar-button,
+.interactive-hero-block .interactive-center .rck-image-overlay .hs-popup .rck-content .rck-accordion-container .rck-accordion-content::-webkit-scrollbar-track-piece,
+.interactive-hero-block .interactive-center .rck-image-overlay .hs-popup .rck-content .rck-accordion-container .rck-accordion-content::-webkit-scrollbar-corner,
+.interactive-hero-block .interactive-center .rck-image-overlay .hs-popup .rck-content .rck-accordion-container .rck-accordion-content::-webkit-resizer {
   display: none;
 }
-.interactive-hero-block .interactive-center .image-overlay .hs-popup .content .accordion-container .accordion-content::-webkit-scrollbar-thumb {
+.interactive-hero-block .interactive-center .rck-image-overlay .hs-popup .rck-content .rck-accordion-container .rck-accordion-content::-webkit-scrollbar-thumb {
   border-radius: 6px;
   background-color: #3B3B3B;
 }
-.interactive-hero-block .interactive-center .image-overlay .hs-popup .content .accordion-container .accordion-content::-webkit-scrollbar-track {
+.interactive-hero-block .interactive-center .rck-image-overlay .hs-popup .rck-content .rck-accordion-container .rck-accordion-content::-webkit-scrollbar-track {
   background-image: url("http://navigatehost.co.za/digital_discovery/custom-dev/image-hotspot/assets/scroll-track.png");
   background-repeat: repeat-y;
   background-size: contain;
 }
-.interactive-hero-block .interactive-center .image-overlay .hs-popup .content .accordion-container .visual-container {
+.interactive-hero-block .interactive-center .rck-image-overlay .hs-popup .rck-content .rck-accordion-container .rck-visual-container {
   height: 35vw;
   background-color: #707070;
 }
-.interactive-hero-block .interactive-center .image-overlay .hs-popup .footer {
+.interactive-hero-block .interactive-center .rck-image-overlay .hs-popup .rck-footer {
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.interactive-hero-block .interactive-center .image-overlay .hs-popup .footer .accordion-icon-container {
+.interactive-hero-block .interactive-center .rck-image-overlay .hs-popup .rck-footer .rck-accordion-icon-container {
   position: absolute;
 }
-.interactive-hero-block .interactive-center .image-overlay .hs-popup .footer .accordion-icon-container .accordion-icon {
+.interactive-hero-block .interactive-center .rck-image-overlay .hs-popup .rck-footer .rck-accordion-icon-container .rck-accordion-icon {
   cursor: pointer;
   font-size: 1em;
   font-weight: 800;
@@ -137,13 +137,13 @@
   top: -1.4em;
   line-height: 1;
 }
-.interactive-hero-block .interactive-center .image-overlay .hs-popup .footer .accordion-icon-container .accordion-icon:hover {
+.interactive-hero-block .interactive-center .rck-image-overlay .hs-popup .rck-footer .rck-accordion-icon-container .rck-accordion-icon:hover {
   background: #CB4E00;
 }
-.interactive-hero-block .interactive-center .image-overlay .hotspot-container {
+.interactive-hero-block .interactive-center .rck-image-overlay .rck-hotspot-container {
   position: absolute;
 }
-.interactive-hero-block .interactive-center .image-overlay .hotspot-container .pulse-vitality {
+.interactive-hero-block .interactive-center .rck-image-overlay .rck-hotspot-container .pulse-vitality {
   width: 1.5em;
   height: 1.5em;
   border-radius: 50%;
@@ -154,13 +154,13 @@
   align-items: center;
   justify-content: center;
 }
-.interactive-hero-block .interactive-center .image-overlay .hotspot-container .pulse-vitality .pulse-label {
+.interactive-hero-block .interactive-center .rck-image-overlay .rck-hotspot-container .pulse-vitality .pulse-label {
   font-size: 0.8em;
   font-weight: 600;
   z-index: 1;
 }
-.interactive-hero-block .interactive-center .image-overlay .hotspot-container .pulse-vitality:before,
-.interactive-hero-block .interactive-center .image-overlay .hotspot-container .pulse-vitality:after {
+.interactive-hero-block .interactive-center .rck-image-overlay .rck-hotspot-container .pulse-vitality:before,
+.interactive-hero-block .interactive-center .rck-image-overlay .rck-hotspot-container .pulse-vitality:after {
   content: "";
   display: block;
   position: absolute;
@@ -189,13 +189,13 @@
   animation-timing-function: linear;
   opacity: 1;
 }
-.interactive-hero-block .interactive-center .image-overlay .hotspot-container .pulse-vitality-selected .pulse-label {
+.interactive-hero-block .interactive-center .rck-image-overlay .rck-hotspot-container .pulse-vitality-selected .pulse-label {
   font-size: 0.8em;
   font-weight: 600;
   z-index: 1;
 }
-.interactive-hero-block .interactive-center .image-overlay .hotspot-container .pulse-vitality-selected:before,
-.interactive-hero-block .interactive-center .image-overlay .hotspot-container .pulse-vitality-selected:after {
+.interactive-hero-block .interactive-center .rck-image-overlay .rck-hotspot-container .pulse-vitality-selected:before,
+.interactive-hero-block .interactive-center .rck-image-overlay .rck-hotspot-container .pulse-vitality-selected:after {
   content: "";
   display: block;
   position: absolute;
@@ -203,13 +203,13 @@
   animation: none;
   background-color: #CB4E00;
 }
-.interactive-hero-block .interactive-center .image-overlay .hotspot-container .pulse:hover {
+.interactive-hero-block .interactive-center .rck-image-overlay .rck-hotspot-container .pulse:hover {
   background-color: #015498;
 }
-.interactive-hero-block .interactive-center .image-overlay .hotspot-container .pulse:hover i {
+.interactive-hero-block .interactive-center .rck-image-overlay .rck-hotspot-container .pulse:hover i {
   color: #ffffff;
 }
-.interactive-hero-block .interactive-center .image-overlay .hotspot-container .pulse {
+.interactive-hero-block .interactive-center .rck-image-overlay .rck-hotspot-container .pulse {
   width: 2em;
   height: 2em;
   border-radius: 50%;
@@ -221,12 +221,12 @@
   align-items: center;
   justify-content: center;
 }
-.interactive-hero-block .interactive-center .image-overlay .hotspot-container .pulse i {
+.interactive-hero-block .interactive-center .rck-image-overlay .rck-hotspot-container .pulse i {
   font-size: 1em;
   font-weight: 600;
 }
-.interactive-hero-block .interactive-center .image-overlay .hotspot-container .pulse:before,
-.interactive-hero-block .interactive-center .image-overlay .hotspot-container .pulse:after {
+.interactive-hero-block .interactive-center .rck-image-overlay .rck-hotspot-container .pulse:before,
+.interactive-hero-block .interactive-center .rck-image-overlay .rck-hotspot-container .pulse:after {
   content: "";
   display: block;
   position: absolute;
@@ -239,30 +239,30 @@
   animation: pulse-animate 3s linear infinite;
   opacity: 0;
 }
-.interactive-hero-block .interactive-center .image-overlay .hotspot-container .pulse:after {
+.interactive-hero-block .interactive-center .rck-image-overlay .rck-hotspot-container .pulse:after {
   animation-delay: 2s;
 }
-.interactive-hero-block .interactive-center .image-overlay #hs1 {
+.interactive-hero-block .interactive-center .rck-image-overlay #hs1 {
   top: 20%;
   left: 12%;
 }
-.interactive-hero-block .interactive-center .image-overlay #hs2 {
+.interactive-hero-block .interactive-center .rck-image-overlay #hs2 {
   top: 45%;
   left: 12%;
 }
-.interactive-hero-block .interactive-center .image-overlay #hs3 {
+.interactive-hero-block .interactive-center .rck-image-overlay #hs3 {
   top: 70%;
   left: 12%;
 }
-.interactive-hero-block .interactive-center .image-overlay #hs4 {
+.interactive-hero-block .interactive-center .rck-image-overlay #hs4 {
   top: 20%;
   left: 82%;
 }
-.interactive-hero-block .interactive-center .image-overlay #hs5 {
+.interactive-hero-block .interactive-center .rck-image-overlay #hs5 {
   top: 45%;
   left: 82%;
 }
-.interactive-hero-block .interactive-center .image-overlay #hs6 {
+.interactive-hero-block .interactive-center .rck-image-overlay #hs6 {
   top: 70%;
   left: 82%;
 }
@@ -272,42 +272,42 @@
 
 /******************************************* MEDIA QUERIES: START ************************************************/
 @media screen and (min-width: 769px) {
-  .interactive-hero-block .interactive-center .image-overlay .hotspot-container .hs-popup {
+  .interactive-hero-block .interactive-center .rck-image-overlay .rck-hotspot-container .hs-popup {
     top: 2em;
     width: 20vw;
     position: absolute;
   }
-  .interactive-hero-block .interactive-center .image-overlay .hotspot-container .hs-popup .content .accordion-content {
+  .interactive-hero-block .interactive-center .rck-image-overlay .rck-hotspot-container .hs-popup .rck-content .rck-accordion-content {
     max-height: 20vw;
   }
-  .interactive-hero-block .interactive-center .image-overlay .hotspot-container .hs-popup .content .accordion-content.has-visual {
+  .interactive-hero-block .interactive-center .rck-image-overlay .rck-hotspot-container .hs-popup .rck-content .rck-accordion-content.rck-has-visual {
     max-height: 15vw;
   }
-  .interactive-hero-block .interactive-center .image-overlay .hotspot-container .hs-popup .content .visual-container {
+  .interactive-hero-block .interactive-center .rck-image-overlay .rck-hotspot-container .hs-popup .rck-content .rck-visual-container {
     height: 15vw;
   }
-  .interactive-hero-block .interactive-center .image-overlay .hotspot-container .hs-popup.pos-left {
+  .interactive-hero-block .interactive-center .rck-image-overlay .rck-hotspot-container .hs-popup.pos-left {
     left: -26vw;
   }
-  .interactive-hero-block .interactive-center .image-overlay .hotspot-container .hs-popup.pos-left.zero {
+  .interactive-hero-block .interactive-center .rck-image-overlay .rck-hotspot-container .hs-popup.pos-left.rck-zero {
     top: 0;
   }
-  .interactive-hero-block .interactive-center .image-overlay .hotspot-container .hs-popup.pos-left.one {
+  .interactive-hero-block .interactive-center .rck-image-overlay .rck-hotspot-container .hs-popup.pos-left.rck-one {
     top: 0;
   }
-  .interactive-hero-block .interactive-center .image-overlay .hotspot-container .hs-popup.pos-left.two {
+  .interactive-hero-block .interactive-center .rck-image-overlay .rck-hotspot-container .hs-popup.pos-left.rck-two {
     top: 0;
   }
-  .interactive-hero-block .interactive-center .image-overlay .hotspot-container .hs-popup.pos-right {
+  .interactive-hero-block .interactive-center .rck-image-overlay .rck-hotspot-container .hs-popup.pos-right {
     left: 8.5vw;
   }
-  .interactive-hero-block .interactive-center .image-overlay .hotspot-container .hs-popup.pos-right.zero {
+  .interactive-hero-block .interactive-center .rck-image-overlay .rck-hotspot-container .hs-popup.pos-right.rck-zero {
     top: 0;
   }
-  .interactive-hero-block .interactive-center .image-overlay .hotspot-container .hs-popup.pos-right.one {
+  .interactive-hero-block .interactive-center .rck-image-overlay .rck-hotspot-container .hs-popup.pos-right.rck-one {
     top: 0;
   }
-  .interactive-hero-block .interactive-center .image-overlay .hotspot-container .hs-popup.pos-right.two {
+  .interactive-hero-block .interactive-center .rck-image-overlay .rck-hotspot-container .hs-popup.pos-right.rck-two {
     top: 0;
   }
 }
