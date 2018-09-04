@@ -1,0 +1,285 @@
+/*************************** CIRCULAR PROGRESS BAR STYLES: START *************************/
+
+$vitality-orange: #f15922;
+$discovery-dark-grey: #4c4d4f;
+$circle-stroke-bg: #dedfe0;
+$vitality-blue: #4d85c5;
+$vitality-light-blue: #dbe0ee;
+
+.rck-circ-vit-wheel-journey-wrapper {
+  display: flex;
+  flex-flow: row nowrap;
+}
+
+.rck-circ-vit-wheel-journey-single-chart {
+  width: 100%;
+  justify-content: space-around;
+}
+
+.rck-circ-pb-circular-chart {
+  display: block;
+  margin: 0 auto;
+  max-width: 80%;
+  //max-height: 175px;
+}
+
+.rck-circ-vit-wheel-journey-bg {
+  fill: none;
+  stroke: $vitality-light-blue;
+  stroke-width: 5;
+}
+
+.rck-circ-vit-wheel-journey-disc {
+  fill: none;
+  stroke-width: 5;
+  stroke-linecap: round;
+
+  &.rck-circ-vit-wheel-journey-disc-animate {
+    animation: rck-circ-progress-animation 1s ease-out forwards;
+    display: inline;
+  }
+
+  &.rck-circ-vit-wheel-journey-disc-hidden {
+    display: none;
+  }
+}
+
+@keyframes rck-circ-progress-animation {
+  0% {
+    stroke-dasharray: 0 100;
+  }
+}
+
+.rck-circ-pb-circular-chart.orange .rck-circ-vit-wheel-journey-disc {
+  //stroke: $vitality-orange;
+  //stroke:url(#grad);
+}
+
+.rck-circ-pb-circular-chart.green .rck-circ-vit-wheel-journey-disc {
+  stroke: #4CC790;
+}
+
+.rck-circ-pb-circular-chart.blue .rck-circ-vit-wheel-journey-disc {
+  stroke: $vitality-blue;
+}
+
+.circular-label {
+  fill: $discovery-dark-grey;
+  font-family: sans-serif;
+  font-size: 0.3em;
+  text-anchor: middle;
+  color: $discovery-dark-grey;
+}
+
+.percentage {
+  fill: $vitality-orange;
+  font-family: sans-serif;
+  font-size: 0.5em;
+  text-anchor: middle;
+  color: $vitality-orange;
+}
+
+.rck-circular-progress-background {
+  position: absolute;
+
+  .rck-circ-pb-bck-img {
+    max-width: 80vw;
+    width: 100%;
+  }
+
+  .rck-circ-vit-wheel-journey-single-chart {
+    position: absolute;
+    top: 0;
+  }
+}
+
+/*************************** CIRCULAR PROGRESS BAR STYLES: END *************************/
+
+.vit-health-wheel-container {
+  position: relative;
+
+  .vit-health-wheel-disc {
+    background: $vitality-light-blue;
+    width: 90vw;
+    height: 90vw;
+    border-radius: 50%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .disc-inner {
+      width: 50vw;
+      height: 50vw;
+      background: white;
+      border-radius: 50%;
+    }
+  }
+
+  .vit-health-wheel-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    .pulse:before,
+    .pulse:after {
+      content: '';
+      display: block;
+      position: absolute;
+      border-radius: 50%;
+      border: 1px solid $vitality-blue;
+      left: -0.8em;
+      right: -0.8em;
+      top: -0.8em;
+      bottom: -0.8em;
+      animation: pulse-animate 3s linear infinite;
+      opacity: 0;
+    }
+
+    .pulse:after {
+      animation-delay: 2s;
+    }
+
+    .vit-health-wheel-hotspot {
+      width: 15vw;
+      height: 15vw;
+      //background-color: $vitality-blue;
+      cursor: pointer;
+      position: absolute;
+      justify-content: center;
+      align-items: center;
+      display: none;
+
+      &.light-blue {
+        background-color: $vitality-light-blue;
+      }
+
+      &.visible {
+        display: flex !important;
+      }
+
+      .outer-icon {
+        font-size: 10vw;
+        color: $discovery-dark-grey;
+      }
+
+      .inner-icon {
+        font-size: 7.5vw;
+        color: $discovery-dark-grey;
+      }
+
+    }
+
+    .vit-health-wheel-hotspot[data-animation-index="0"] {
+      left: -35vw;
+      top: -31vw;
+    }
+    .vit-health-wheel-hotspot[data-animation-index="1"] {
+      left: -19vw;
+      top: -40vw;
+    }
+    .vit-health-wheel-hotspot[data-animation-index="2"] {
+      left: 0vw;
+      top: -42vw;
+    }
+    .vit-health-wheel-hotspot[data-animation-index="3"] {
+      left: 17vw;
+      top: -34vw;
+    }
+    .vit-health-wheel-hotspot[data-animation-index="4"] {
+      left: 27vw;
+      top: 1vw;
+    }
+    .vit-health-wheel-hotspot[data-animation-index="5"] {
+      left: 19vw;
+      top: 15vw;
+    }
+    .vit-health-wheel-hotspot[data-animation-index="6"] {
+      left: 2vw;
+      top: 25vw;
+    }
+    .vit-health-wheel-hotspot[data-animation-index="7"] {
+      left: -17vw;
+      top: 25vw;
+    }
+    .vit-health-wheel-hotspot[data-animation-index="8"] {
+      left: -32vw;
+      top: 14vw;
+    }
+    .vit-health-wheel-hotspot[data-animation-index="9"] {
+      left: -41vw;
+      top: -2vw;
+    }
+    .vit-health-wheel-hotspot[data-animation-index="10"] {
+      left: -1vw;
+      top: -25vw;
+    }
+    .vit-health-wheel-hotspot[data-animation-index="11"] {
+      left: 10vw;
+      top: -13vw;
+    }
+    .vit-health-wheel-hotspot[data-animation-index="12"] {
+      left: 8vw;
+      top: 2vw;
+    }
+    .vit-health-wheel-hotspot[data-animation-index="13"] {
+      left: -5vw;
+      top: 8vw;
+    }
+    .vit-health-wheel-hotspot[data-animation-index="14"] {
+      left: -18vw;
+      top: 6vw;
+    }
+    .vit-health-wheel-hotspot[data-animation-index="15"] {
+      left: -24vw;
+      top: -7vw;
+    }
+  }
+}
+
+.mobile-popup-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 7.5vw;
+
+  .vit-health-popup {
+    width: 80vw;
+    height: 60vw;
+    box-shadow: 3px 5px 24px 1px rgba(0, 0, 0, 0.2);
+
+    &.hidden {
+      display: none;
+    }
+    //border-radius: 50%;
+
+    .vit-health-popup-content {
+      display: none;
+
+      &.visible {
+        display: flex !important;
+      }
+    }
+  }
+}
+
+/******************************************* ANIMATIONS: START ************************************************/
+
+@keyframes pulse-animate {
+
+  0% {
+    transform: scale(0.5);
+    opacity: 0.75;
+  }
+
+  50% {
+    opacity: 0.75;
+  }
+
+  100% {
+    transform: scale(1.2);
+    opacity: 0;
+  }
+}
+
+/******************************************* ANIMATIONS: END ************************************************/

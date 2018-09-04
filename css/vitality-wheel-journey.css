@@ -1,0 +1,245 @@
+/*************************** CIRCULAR PROGRESS BAR STYLES: START *************************/
+.rck-circ-vit-wheel-journey-wrapper {
+  display: flex;
+  flex-flow: row nowrap;
+}
+
+.rck-circ-vit-wheel-journey-single-chart {
+  width: 100%;
+  justify-content: space-around;
+}
+
+.rck-circ-pb-circular-chart {
+  display: block;
+  margin: 0 auto;
+  max-width: 80%;
+}
+
+.rck-circ-vit-wheel-journey-bg {
+  fill: none;
+  stroke: #dbe0ee;
+  stroke-width: 5;
+}
+
+.rck-circ-vit-wheel-journey-disc {
+  fill: none;
+  stroke-width: 5;
+  stroke-linecap: round;
+}
+.rck-circ-vit-wheel-journey-disc.rck-circ-vit-wheel-journey-disc-animate {
+  animation: rck-circ-progress-animation 1s ease-out forwards;
+  display: inline;
+}
+.rck-circ-vit-wheel-journey-disc.rck-circ-vit-wheel-journey-disc-hidden {
+  display: none;
+}
+
+@keyframes rck-circ-progress-animation {
+  0% {
+    stroke-dasharray: 0 100;
+  }
+}
+.rck-circ-pb-circular-chart.green .rck-circ-vit-wheel-journey-disc {
+  stroke: #4CC790;
+}
+
+.rck-circ-pb-circular-chart.blue .rck-circ-vit-wheel-journey-disc {
+  stroke: #4d85c5;
+}
+
+.circular-label {
+  fill: #4c4d4f;
+  font-family: sans-serif;
+  font-size: 0.3em;
+  text-anchor: middle;
+  color: #4c4d4f;
+}
+
+.percentage {
+  fill: #f15922;
+  font-family: sans-serif;
+  font-size: 0.5em;
+  text-anchor: middle;
+  color: #f15922;
+}
+
+.rck-circular-progress-background {
+  position: absolute;
+}
+.rck-circular-progress-background .rck-circ-pb-bck-img {
+  max-width: 80vw;
+  width: 100%;
+}
+.rck-circular-progress-background .rck-circ-vit-wheel-journey-single-chart {
+  position: absolute;
+  top: 0;
+}
+
+/*************************** CIRCULAR PROGRESS BAR STYLES: END *************************/
+.vit-health-wheel-container {
+  position: relative;
+}
+.vit-health-wheel-container .vit-health-wheel-disc {
+  background: #dbe0ee;
+  width: 90vw;
+  height: 90vw;
+  border-radius: 50%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.vit-health-wheel-container .vit-health-wheel-disc .disc-inner {
+  width: 50vw;
+  height: 50vw;
+  background: white;
+  border-radius: 50%;
+}
+.vit-health-wheel-container .vit-health-wheel-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+.vit-health-wheel-container .vit-health-wheel-overlay .pulse:before,
+.vit-health-wheel-container .vit-health-wheel-overlay .pulse:after {
+  content: "";
+  display: block;
+  position: absolute;
+  border-radius: 50%;
+  border: 1px solid #4d85c5;
+  left: -0.8em;
+  right: -0.8em;
+  top: -0.8em;
+  bottom: -0.8em;
+  animation: pulse-animate 3s linear infinite;
+  opacity: 0;
+}
+.vit-health-wheel-container .vit-health-wheel-overlay .pulse:after {
+  animation-delay: 2s;
+}
+.vit-health-wheel-container .vit-health-wheel-overlay .vit-health-wheel-hotspot {
+  width: 15vw;
+  height: 15vw;
+  cursor: pointer;
+  position: absolute;
+  justify-content: center;
+  align-items: center;
+  display: none;
+}
+.vit-health-wheel-container .vit-health-wheel-overlay .vit-health-wheel-hotspot.light-blue {
+  background-color: #dbe0ee;
+}
+.vit-health-wheel-container .vit-health-wheel-overlay .vit-health-wheel-hotspot.visible {
+  display: flex !important;
+}
+.vit-health-wheel-container .vit-health-wheel-overlay .vit-health-wheel-hotspot .outer-icon {
+  font-size: 10vw;
+  color: #4c4d4f;
+}
+.vit-health-wheel-container .vit-health-wheel-overlay .vit-health-wheel-hotspot .inner-icon {
+  font-size: 7.5vw;
+  color: #4c4d4f;
+}
+.vit-health-wheel-container .vit-health-wheel-overlay .vit-health-wheel-hotspot[data-animation-index="0"] {
+  left: -35vw;
+  top: -31vw;
+}
+.vit-health-wheel-container .vit-health-wheel-overlay .vit-health-wheel-hotspot[data-animation-index="1"] {
+  left: -19vw;
+  top: -40vw;
+}
+.vit-health-wheel-container .vit-health-wheel-overlay .vit-health-wheel-hotspot[data-animation-index="2"] {
+  left: 0vw;
+  top: -42vw;
+}
+.vit-health-wheel-container .vit-health-wheel-overlay .vit-health-wheel-hotspot[data-animation-index="3"] {
+  left: 17vw;
+  top: -34vw;
+}
+.vit-health-wheel-container .vit-health-wheel-overlay .vit-health-wheel-hotspot[data-animation-index="4"] {
+  left: 27vw;
+  top: 1vw;
+}
+.vit-health-wheel-container .vit-health-wheel-overlay .vit-health-wheel-hotspot[data-animation-index="5"] {
+  left: 19vw;
+  top: 15vw;
+}
+.vit-health-wheel-container .vit-health-wheel-overlay .vit-health-wheel-hotspot[data-animation-index="6"] {
+  left: 2vw;
+  top: 25vw;
+}
+.vit-health-wheel-container .vit-health-wheel-overlay .vit-health-wheel-hotspot[data-animation-index="7"] {
+  left: -17vw;
+  top: 25vw;
+}
+.vit-health-wheel-container .vit-health-wheel-overlay .vit-health-wheel-hotspot[data-animation-index="8"] {
+  left: -32vw;
+  top: 14vw;
+}
+.vit-health-wheel-container .vit-health-wheel-overlay .vit-health-wheel-hotspot[data-animation-index="9"] {
+  left: -41vw;
+  top: -2vw;
+}
+.vit-health-wheel-container .vit-health-wheel-overlay .vit-health-wheel-hotspot[data-animation-index="10"] {
+  left: -1vw;
+  top: -25vw;
+}
+.vit-health-wheel-container .vit-health-wheel-overlay .vit-health-wheel-hotspot[data-animation-index="11"] {
+  left: 10vw;
+  top: -13vw;
+}
+.vit-health-wheel-container .vit-health-wheel-overlay .vit-health-wheel-hotspot[data-animation-index="12"] {
+  left: 8vw;
+  top: 2vw;
+}
+.vit-health-wheel-container .vit-health-wheel-overlay .vit-health-wheel-hotspot[data-animation-index="13"] {
+  left: -5vw;
+  top: 8vw;
+}
+.vit-health-wheel-container .vit-health-wheel-overlay .vit-health-wheel-hotspot[data-animation-index="14"] {
+  left: -18vw;
+  top: 6vw;
+}
+.vit-health-wheel-container .vit-health-wheel-overlay .vit-health-wheel-hotspot[data-animation-index="15"] {
+  left: -24vw;
+  top: -7vw;
+}
+
+.mobile-popup-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 7.5vw;
+}
+.mobile-popup-container .vit-health-popup {
+  width: 80vw;
+  height: 60vw;
+  box-shadow: 3px 5px 24px 1px rgba(0, 0, 0, 0.2);
+}
+.mobile-popup-container .vit-health-popup.hidden {
+  display: none;
+}
+.mobile-popup-container .vit-health-popup .vit-health-popup-content {
+  display: none;
+}
+.mobile-popup-container .vit-health-popup .vit-health-popup-content.visible {
+  display: flex !important;
+}
+
+/******************************************* ANIMATIONS: START ************************************************/
+@keyframes pulse-animate {
+  0% {
+    transform: scale(0.5);
+    opacity: 0.75;
+  }
+  50% {
+    opacity: 0.75;
+  }
+  100% {
+    transform: scale(1.2);
+    opacity: 0;
+  }
+}
+/******************************************* ANIMATIONS: END ************************************************/
+
+/*# sourceMappingURL=vitality-wheel-journey.css.map */

@@ -2,9 +2,129 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <script type="text/javascript" src="http://code.jquery.com/jquery.min.js"></script>
+    <link href="../themify-icons/themify-icons.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="../css/vitality-wheel-journey.css">
+    <script type="text/javascript" src="../js/vitality-wheel-journey.js"></script>
+
+    <!--<link rel="stylesheet" href="http://navigatehost.co.za/digital_discovery/custom-dev/progress-bar/css/style.css">-->
+    <!--<script type="text/javascript" src="http://navigatehost.co.za/digital_discovery/custom-dev/progress-bar/js/progress-bar-visibility.js"></script>-->
+
+
+
+    <title>Vitality Wheel Journey</title>
 </head>
 <body>
+<div class="vit-health-wheel-container">
+    <div class="vit-health-wheel-disc">
+        <div class="disc-inner">
+        </div>
+    </div>
+    <div class="vit-health-wheel-overlay">
+        <div class="vit-health-wheel-hotspot visible pulse" data-animation-index="0">
+            <i class="ti-user outer-icon"></i>
+        </div>
+        <div class="vit-health-wheel-hotspot" data-animation-index="1">
+            <i class="ti-receipt outer-icon"></i>
+        </div>
+        <div class="vit-health-wheel-hotspot" data-animation-index="2">
+            <i class="ti-files outer-icon"></i>
+        </div>
+        <div class="vit-health-wheel-hotspot" data-animation-index="3">
+            <i class="ti-pulse outer-icon"></i>
+        </div>
+        <div class="vit-health-wheel-hotspot" data-animation-index="4">
+            <i class="ti-shield outer-icon"></i>
+        </div>
+        <div class="vit-health-wheel-hotspot" data-animation-index="5">
+            <i class="ti-printer outer-icon"></i>
+        </div>
+        <div class="vit-health-wheel-hotspot" data-animation-index="6">
+            <i class="ti-package outer-icon"></i>
+        </div>
+        <div class="vit-health-wheel-hotspot" data-animation-index="7">
+            <i class="ti-microphone outer-icon"></i>
+        </div>
+        <div class="vit-health-wheel-hotspot" data-animation-index="8">
+            <i class="ti-gift outer-icon"></i>
+        </div>
+        <div class="vit-health-wheel-hotspot" data-animation-index="9">
+            <i class="ti-archive outer-icon"></i>
+        </div>
+        <div class="vit-health-wheel-hotspot" data-animation-index="10">
+            <i class="ti-bar-chart-alt inner-icon"></i>
+        </div>
+        <div class="vit-health-wheel-hotspot" data-animation-index="11">
+            <i class="ti-hummer inner-icon"></i>
+        </div>
+        <div class="vit-health-wheel-hotspot" data-animation-index="12">
+            <i class="ti-video-camera inner-icon"></i>
+        </div>
+        <div class="vit-health-wheel-hotspot" data-animation-index="13">
+            <i class="ti-help inner-icon"></i>
+        </div>
+        <div class="vit-health-wheel-hotspot" data-animation-index="14">
+            <i class="ti-mouse-alt inner-icon"></i>
+        </div>
+        <div class="vit-health-wheel-hotspot" data-animation-index="15">
+            <i class="ti-star inner-icon"></i>
+        </div>
+    </div>
+</div>
+<div class="mobile-popup-container">
+    <div class="vit-health-popup hidden">
+        <div class="vit-health-popup-content" data-animation-index="0">
+            <div class="vit-health-popup-header"></div>
+            <div class="vit-health-popup-body">Get active in a variety of ways</div>
+            <div class="vit-health-popup-footer"></div>
+        </div>
+        <div class="vit-health-popup-content" data-animation-index="1">
+            <div class="vit-health-popup-header"></div>
+            <div class="vit-health-popup-body">Complete your health checks and assessments</div>
+            <div class="vit-health-popup-footer"></div>
+        </div>
+        <div class="vit-health-popup-content" data-animation-index="2">
+            <div class="vit-health-popup-header"></div>
+            <div class="vit-health-popup-body">HealthyFood purchases</div>
+            <div class="vit-health-popup-footer"></div>
+        </div>
+        <div class="vit-health-popup-content" data-animation-index="3">
+            <div class="vit-health-popup-header"></div>
+            <div class="vit-health-popup-body">Get healthy as a family</div>
+            <div class="vit-health-popup-footer"></div>
+        </div>
+    </div>
+</div>
 
+<!--<div style="height: 1500px"></div>-->
+<!--<div class="rck-circ-vit-wheel-journey-wrapper">-->
+    <!--<div class="rck-circ-vit-wheel-journey-single-chart">-->
+        <!--<svg viewBox="0 0 36 36" class="rck-circ-pb-circular-chart blue">-->
+
+            <!--<linearGradient id='grad'>-->
+                <!--<stop stop-color='#4d85c5'/>-->
+                <!--<stop offset='100%' stop-color='#dbe0ee'/>-->
+            <!--</linearGradient>-->
+
+            <!--<path class="rck-circ-vit-wheel-journey-bg"-->
+                  <!--d="M18 2.0845-->
+          <!--a 15.9155 15.9155 0 0 1 0 31.831-->
+          <!--a 15.9155 15.9155 0 0 1 0 -31.831"-->
+            <!--/>-->
+            <!--<path class="rck-circ-vit-wheel-journey-disc"-->
+                  <!--stroke-dasharray="100, 100"-->
+                  <!--d="M18 2.0845-->
+          <!--a 15.9155 15.9155 0 0 1 0 31.831-->
+          <!--a 15.9155 15.9155 0 0 1 0 -31.831"-->
+            <!--/>-->
+            <!--&lt;!&ndash;<text x="18" y="15.35" class="circular-label">Up to</text>&ndash;&gt;-->
+            <!--&lt;!&ndash;<text x="18" y="24.35" class="percentage">75%</text>&ndash;&gt;-->
+        <!--</svg>-->
+    <!--</div>-->
+<!--</div>-->
+<!--<div style="height: 1500px"></div>-->
 </body>
 </html>
