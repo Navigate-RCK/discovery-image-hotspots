@@ -33,7 +33,7 @@ $vitality-orange: #CB4E00;
 
     .main-image {
       width: 100%;
-      //max-width: 600px;
+      max-width: 600px;
       height: auto;
       min-width: 350px;
       //position: absolute;
@@ -60,17 +60,18 @@ $vitality-orange: #CB4E00;
       //}
 
       .hs-popup {
-        width: 55%;
+        width: 85%;
         background: white;
         color: $vitality-grey;
         box-shadow: 3px 5px 24px 1px rgba(0, 0, 0, 0.2);
         //border-radius: 5px;
-        //margin: 0 auto;
-        margin-left: 3px;
+        margin: 0 auto;
+        //margin-left: 3px;
         margin-top: 15%;
         left: 0;
         right: 0;
-        z-index: 1;
+        z-index: 2;
+        //position: absolute;
 
         &.hs-hidden {
           display: none;
@@ -198,6 +199,41 @@ $vitality-orange: #CB4E00;
           }
         }
       }
+
+
+      /******************************* POPUP LOCATIONS: START *****************************************/
+
+      .hs-popup[data-popup-id="hs-vit-act-rew-1"] {
+        //top: 2.5em;
+        //left: -5em;
+        margin-top: 74%;
+      }
+
+      .hs-popup[data-popup-id="hs-vit-act-rew-2"] {
+        //top: 2.5em;
+        //left: -5em;
+        margin-top: 90%;
+      }
+
+      .hs-popup[data-popup-id="hs-vit-act-rew-3"] {
+        //top: -26em;
+        //left: -2em;
+        margin-top: 58%;
+      }
+
+      .hs-popup[data-popup-id="hs-vit-act-rew-4"] {
+        margin-top: 58%;
+      }
+
+      .hs-popup[data-popup-id="hs-vit-act-rew-5"] {
+        margin-top: 58%;
+      }
+
+      .hs-popup[data-popup-id="hs-vit-act-rew-6"] {
+        margin-top: 58%;
+      }
+
+      /******************************* POPUP LOCATIONS: END *****************************************/
 
 
       .rck-hotspot-container {
@@ -331,37 +367,34 @@ $vitality-orange: #CB4E00;
         }
       }
 
-      #hs1 {
-        top: 20%;
-        left: 12%;
+      #hs-vit-act-rew-1 {
+        top: 30%;
+        left: 35%;
       }
 
-      #hs2 {
-        top: 45%;
-        left: 12%;
+      #hs-vit-act-rew-2 {
+        top: 38%;
+        left: 35%;
       }
 
-      #hs3 {
-        top: 70%;
-        left: 12%;
+      #hs-vit-act-rew-3 {
+        top: 86%;
+        left: 20%;
       }
 
-      #hs4 {
-        top: 20%;
-        left: 82%;
-
+      #hs-vit-act-rew-4 {
+        top: 86%;
+        left: 37.5%;
       }
 
-      #hs5 {
-        top: 45%;
-        left: 82%;
-
+      #hs-vit-act-rew-5 {
+        top: 86%;
+        left: 55%;
       }
 
-      #hs6 {
-        top: 70%;
-        left: 82%;
-
+      #hs-vit-act-rew-6 {
+        top: 86%;
+        left: 73%;
       }
     }
   }
@@ -462,8 +495,8 @@ $vitality-orange: #CB4E00;
 
         .rck-hotspot-container {
           .hs-popup {
-            top: 2em;
-            width: 20vw;
+            //top: 2em;
+            width: 27.5vw;
             position: absolute;
 
             .rck-content {
@@ -523,6 +556,36 @@ $vitality-orange: #CB4E00;
 
           }
 
+          .hs-popup[data-popup-id="hs-vit-act-rew-1"] {
+            left: -55vw;
+            top: -10vw;
+          }
+
+          .hs-popup[data-popup-id="hs-vit-act-rew-2"] {
+            left: -55vw;
+            top: -1vw;
+          }
+
+          .hs-popup[data-popup-id="hs-vit-act-rew-3"] {
+            left: -46vw;
+            top: -16.5vw;
+          }
+
+          .hs-popup[data-popup-id="hs-vit-act-rew-4"] {
+            left: -56.3vw;
+            top: -1.3vw;
+          }
+
+          .hs-popup[data-popup-id="hs-vit-act-rew-5"] {
+            top: -16.6vw;
+            left: 17vw;
+          }
+
+          .hs-popup[data-popup-id="hs-vit-act-rew-6"] {
+            top: -1.5vw;
+            left: 11.5vw;
+          }
+
           .hs-hidden {
           }
 
@@ -540,23 +603,6 @@ $vitality-orange: #CB4E00;
           }
         }
 
-        #hs1 {
-        }
-
-        #hs2 {
-        }
-
-        #hs3 {
-        }
-
-        #hs4 {
-        }
-
-        #hs5 {
-        }
-
-        #hs6 {
-        }
       }
     }
 

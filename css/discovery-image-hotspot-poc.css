@@ -22,6 +22,7 @@
 }
 .interactive-hero-block .interactive-center .main-image {
   width: 100%;
+  max-width: 600px;
   height: auto;
   min-width: 350px;
 }
@@ -33,17 +34,19 @@
   display: flex;
   align-items: flex-start;
   justify-content: center;
+  /******************************* POPUP LOCATIONS: START *****************************************/
+  /******************************* POPUP LOCATIONS: END *****************************************/
 }
 .interactive-hero-block .interactive-center .rck-image-overlay .hs-popup {
-  width: 55%;
+  width: 85%;
   background: white;
   color: #3B3B3B;
   box-shadow: 3px 5px 24px 1px rgba(0, 0, 0, 0.2);
-  margin-left: 3px;
+  margin: 0 auto;
   margin-top: 15%;
   left: 0;
   right: 0;
-  z-index: 1;
+  z-index: 2;
 }
 .interactive-hero-block .interactive-center .rck-image-overlay .hs-popup.hs-hidden {
   display: none;
@@ -139,6 +142,24 @@
 }
 .interactive-hero-block .interactive-center .rck-image-overlay .hs-popup .rck-footer .rck-accordion-icon-container .rck-accordion-icon:hover {
   background: #CB4E00;
+}
+.interactive-hero-block .interactive-center .rck-image-overlay .hs-popup[data-popup-id=hs-vit-act-rew-1] {
+  margin-top: 74%;
+}
+.interactive-hero-block .interactive-center .rck-image-overlay .hs-popup[data-popup-id=hs-vit-act-rew-2] {
+  margin-top: 90%;
+}
+.interactive-hero-block .interactive-center .rck-image-overlay .hs-popup[data-popup-id=hs-vit-act-rew-3] {
+  margin-top: 58%;
+}
+.interactive-hero-block .interactive-center .rck-image-overlay .hs-popup[data-popup-id=hs-vit-act-rew-4] {
+  margin-top: 58%;
+}
+.interactive-hero-block .interactive-center .rck-image-overlay .hs-popup[data-popup-id=hs-vit-act-rew-5] {
+  margin-top: 58%;
+}
+.interactive-hero-block .interactive-center .rck-image-overlay .hs-popup[data-popup-id=hs-vit-act-rew-6] {
+  margin-top: 58%;
 }
 .interactive-hero-block .interactive-center .rck-image-overlay .rck-hotspot-container {
   position: absolute;
@@ -242,29 +263,29 @@
 .interactive-hero-block .interactive-center .rck-image-overlay .rck-hotspot-container .pulse:after {
   animation-delay: 2s;
 }
-.interactive-hero-block .interactive-center .rck-image-overlay #hs1 {
-  top: 20%;
-  left: 12%;
+.interactive-hero-block .interactive-center .rck-image-overlay #hs-vit-act-rew-1 {
+  top: 30%;
+  left: 35%;
 }
-.interactive-hero-block .interactive-center .rck-image-overlay #hs2 {
-  top: 45%;
-  left: 12%;
+.interactive-hero-block .interactive-center .rck-image-overlay #hs-vit-act-rew-2 {
+  top: 38%;
+  left: 35%;
 }
-.interactive-hero-block .interactive-center .rck-image-overlay #hs3 {
-  top: 70%;
-  left: 12%;
+.interactive-hero-block .interactive-center .rck-image-overlay #hs-vit-act-rew-3 {
+  top: 86%;
+  left: 20%;
 }
-.interactive-hero-block .interactive-center .rck-image-overlay #hs4 {
-  top: 20%;
-  left: 82%;
+.interactive-hero-block .interactive-center .rck-image-overlay #hs-vit-act-rew-4 {
+  top: 86%;
+  left: 37.5%;
 }
-.interactive-hero-block .interactive-center .rck-image-overlay #hs5 {
-  top: 45%;
-  left: 82%;
+.interactive-hero-block .interactive-center .rck-image-overlay #hs-vit-act-rew-5 {
+  top: 86%;
+  left: 55%;
 }
-.interactive-hero-block .interactive-center .rck-image-overlay #hs6 {
-  top: 70%;
-  left: 82%;
+.interactive-hero-block .interactive-center .rck-image-overlay #hs-vit-act-rew-6 {
+  top: 86%;
+  left: 73%;
 }
 .interactive-hero-block .interactive-right {
   width: 100%;
@@ -273,8 +294,7 @@
 /******************************************* MEDIA QUERIES: START ************************************************/
 @media screen and (min-width: 769px) {
   .interactive-hero-block .interactive-center .rck-image-overlay .rck-hotspot-container .hs-popup {
-    top: 2em;
-    width: 20vw;
+    width: 27.5vw;
     position: absolute;
   }
   .interactive-hero-block .interactive-center .rck-image-overlay .rck-hotspot-container .hs-popup .rck-content .rck-accordion-content {
@@ -309,6 +329,30 @@
   }
   .interactive-hero-block .interactive-center .rck-image-overlay .rck-hotspot-container .hs-popup.pos-right.rck-two {
     top: 0;
+  }
+  .interactive-hero-block .interactive-center .rck-image-overlay .rck-hotspot-container .hs-popup[data-popup-id=hs-vit-act-rew-1] {
+    left: -55vw;
+    top: -10vw;
+  }
+  .interactive-hero-block .interactive-center .rck-image-overlay .rck-hotspot-container .hs-popup[data-popup-id=hs-vit-act-rew-2] {
+    left: -55vw;
+    top: -1vw;
+  }
+  .interactive-hero-block .interactive-center .rck-image-overlay .rck-hotspot-container .hs-popup[data-popup-id=hs-vit-act-rew-3] {
+    left: -46vw;
+    top: -16.5vw;
+  }
+  .interactive-hero-block .interactive-center .rck-image-overlay .rck-hotspot-container .hs-popup[data-popup-id=hs-vit-act-rew-4] {
+    left: -56.3vw;
+    top: -1.3vw;
+  }
+  .interactive-hero-block .interactive-center .rck-image-overlay .rck-hotspot-container .hs-popup[data-popup-id=hs-vit-act-rew-5] {
+    top: -16.6vw;
+    left: 17vw;
+  }
+  .interactive-hero-block .interactive-center .rck-image-overlay .rck-hotspot-container .hs-popup[data-popup-id=hs-vit-act-rew-6] {
+    top: -1.5vw;
+    left: 11.5vw;
   }
 }
 /******************************************* MEDIA QUERIES: END ************************************************/
