@@ -100,6 +100,9 @@
   top: 50%;
   left: 50%;
 }
+.vit-health-wheel-container .vit-health-wheel-overlay .pulse {
+  opacity: 1 !important;
+}
 .vit-health-wheel-container .vit-health-wheel-overlay .pulse:before,
 .vit-health-wheel-container .vit-health-wheel-overlay .pulse:after {
   content: "";
@@ -114,9 +117,6 @@
   animation: pulse-animate 3s linear infinite;
   opacity: 0;
 }
-.vit-health-wheel-container .vit-health-wheel-overlay .pulse:after {
-  animation-delay: 2s;
-}
 .vit-health-wheel-container .vit-health-wheel-overlay .vit-health-wheel-hotspot {
   width: 12.5vw;
   height: 12.5vw;
@@ -124,7 +124,6 @@
   position: absolute;
   justify-content: center;
   align-items: center;
-  opacity: 0.3;
   display: flex;
 }
 .vit-health-wheel-container .vit-health-wheel-overlay .vit-health-wheel-hotspot.light-blue {
@@ -133,13 +132,16 @@
 .vit-health-wheel-container .vit-health-wheel-overlay .vit-health-wheel-hotspot.visible {
   opacity: 1;
 }
-.vit-health-wheel-container .vit-health-wheel-overlay .vit-health-wheel-hotspot .outer-icon {
-  font-size: 8vw;
-  color: #4c4d4f;
-}
-.vit-health-wheel-container .vit-health-wheel-overlay .vit-health-wheel-hotspot .inner-icon {
+.vit-health-wheel-container .vit-health-wheel-overlay .vit-health-wheel-hotspot .hs-icon {
   font-size: 6.5vw;
   color: #4c4d4f;
+  opacity: 0.3;
+}
+.vit-health-wheel-container .vit-health-wheel-overlay .vit-health-wheel-hotspot .hs-icon.unselected {
+  opacity: 0.3;
+}
+.vit-health-wheel-container .vit-health-wheel-overlay .vit-health-wheel-hotspot .hs-icon.selected {
+  opacity: 1;
 }
 .vit-health-wheel-container .vit-health-wheel-overlay .vit-health-wheel-hotspot[data-animation-index="0"] {
   left: -34vw;
@@ -242,5 +244,89 @@
   }
 }
 /******************************************* ANIMATIONS: END ************************************************/
+/******************************************* SLIDER: START ************************************************/
+.animate {
+  transition: transform 0.3s ease-out;
+}
+
+.ms-touch.slider {
+  overflow-x: scroll;
+  overflow-y: hidden;
+  -ms-overflow-style: none;
+  /* Hides the scrollbar. */
+  -ms-scroll-chaining: none;
+  /* Prevents Metro from swiping to the next tab or app. */
+  -ms-scroll-snap-type: mandatory;
+  /* Forces a snap scroll behavior on your images. */
+  -ms-scroll-snap-points-x: snapInterval(0%, 100%);
+  /* Defines the y and x intervals to snap to when scrolling. */
+}
+
+.holder {
+  width: calc(80vw * 16);
+  max-height: 500px;
+  height: 100%;
+  overflow-y: hidden;
+}
+
+.rck-slider-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 5vw;
+}
+.rck-slider-container .slider-wrap {
+  width: 80vw;
+  height: 60vw;
+  position: absolute;
+}
+.rck-slider-container .slider-wrap .slider {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+.rck-slider-container .slider-wrap .slider .slide-wrapper {
+  width: 80vw;
+  height: 100%;
+  float: left;
+  height: 500px;
+  position: relative;
+  overflow: hidden;
+}
+.rck-slider-container .slider-wrap .slider .slide-wrapper .close-container {
+  display: flex;
+  justify-content: flex-end;
+}
+.rck-slider-container .slider-wrap .slider .slide-wrapper .slide {
+  position: relative;
+  font-family: Sans-serif;
+}
+.rck-slider-container .slider-wrap .slider .slide-wrapper .slide .slide-content {
+  display: flex;
+  line-height: 1;
+}
+.rck-slider-container .slider-wrap .slider .slide-wrapper .slide .slide-content .sl-con-icon {
+  max-width: 11vw;
+}
+.rck-slider-container .slider-wrap .slider .slide-wrapper .slide .slide-content .sl-con-left {
+  flex: 1;
+  padding: 1em;
+  border-right: 1px solid grey;
+}
+.rck-slider-container .slider-wrap .slider .slide-wrapper .slide .slide-content .sl-con-right {
+  flex: 4;
+  padding: 1em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.rck-slider-container .slider-wrap .slider .slide-wrapper .slide .slide-content .heading {
+  font-weight: 600;
+}
+.rck-slider-container .slider-wrap .slider .slide-wrapper .slide .slide-content .footer {
+  color: #f15922;
+  font-style: italic;
+}
+
+/******************************************* SLIDER: END ************************************************/
 
 /*# sourceMappingURL=vitality-wheel-journey.css.map */

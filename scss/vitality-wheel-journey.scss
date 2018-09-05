@@ -121,6 +121,10 @@ $vitality-light-blue: #dbe0ee;
     top: 50%;
     left: 50%;
 
+    .pulse {
+      opacity: 1 !important;
+    }
+
     .pulse:before,
     .pulse:after {
       content: '';
@@ -136,9 +140,9 @@ $vitality-light-blue: #dbe0ee;
       opacity: 0;
     }
 
-    .pulse:after {
-      animation-delay: 2s;
-    }
+    //.pulse:after {
+    //  animation-delay: 2s;
+    //}
 
     .vit-health-wheel-hotspot {
       width: 12.5vw;
@@ -148,8 +152,8 @@ $vitality-light-blue: #dbe0ee;
       position: absolute;
       justify-content: center;
       align-items: center;
-      opacity: 0.3;
       display: flex;
+      //opacity: 0.3;
 
       &.light-blue {
         background-color: $vitality-light-blue;
@@ -159,14 +163,18 @@ $vitality-light-blue: #dbe0ee;
         opacity: 1;
       }
 
-      .outer-icon {
-        font-size: 8vw;
-        color: $discovery-dark-grey;
-      }
-
-      .inner-icon {
+      .hs-icon {
         font-size: 6.5vw;
         color: $discovery-dark-grey;
+        opacity: 0.3;
+
+        &.unselected {
+          opacity: 0.3;
+        }
+
+        &.selected {
+          opacity: 1;
+        }
       }
 
     }
@@ -284,3 +292,152 @@ $vitality-light-blue: #dbe0ee;
 }
 
 /******************************************* ANIMATIONS: END ************************************************/
+
+
+/******************************************* SLIDER: START ************************************************/
+
+
+.animate {
+  transition: transform 0.3s ease-out;
+}
+
+//html,
+//body {
+//  height: 100%;
+//}
+//
+//body {
+//  margin: 0;
+//  padding: 0;
+//  overflow: hidden;
+//}
+
+
+.ms-touch.slider {
+  overflow-x: scroll;
+  overflow-y: hidden;
+
+  -ms-overflow-style: none;
+  /* Hides the scrollbar. */
+
+  -ms-scroll-chaining: none;
+  /* Prevents Metro from swiping to the next tab or app. */
+
+  -ms-scroll-snap-type: mandatory;
+  /* Forces a snap scroll behavior on your images. */
+
+  -ms-scroll-snap-points-x: snapInterval(0%, 100%);
+  /* Defines the y and x intervals to snap to when scrolling. */
+}
+
+.holder {
+  width: calc(80vw * 16);
+  max-height: 500px;
+  height: 100%;
+  overflow-y: hidden;
+}
+
+.rck-slider-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 5vw;
+
+  .slider-wrap {
+    width: 80vw;
+    height: 60vw;
+    position: absolute;
+    //left: 50%;
+    //margin-left: -150px;
+    //top: 50%;
+    //margin-top: -225px;
+
+    .slider {
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+
+      .slide-wrapper {
+        width: 80vw;
+        height: 100%;
+        float: left;
+        height: 500px;
+        position: relative;
+        overflow: hidden;
+
+        .close-container {
+          display: flex;
+          justify-content: flex-end;
+        }
+
+        .slide {
+          //height: 100%;
+          position: relative;
+          font-family: Sans-serif;
+
+          .slide-content {
+            display: flex;
+            line-height: 1;
+
+            .sl-con-icon {
+              max-width: 11vw;
+            }
+
+            .sl-con-left {
+              flex: 1;
+              padding: 1em;
+              border-right: 1px solid grey;
+            }
+
+            .sl-con-right {
+              flex: 4;
+              padding: 1em;
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+            }
+
+            .heading {
+              font-weight: 600;
+            }
+
+            .body {
+
+            }
+
+            .footer {
+              color: $vitality-orange;
+              font-style: italic;
+            }
+          }
+        }
+
+      }
+    }
+  }
+}
+
+
+//.slide img {
+//  position: absolute;
+//  z-index: 0;
+//  transform: translatex(-100px);
+//}
+
+//.slide:before {
+//  content: "";
+//  position: absolute;
+//  z-index: 1;
+//  bottom: 0;
+//  left: 0;
+//  width: 100%;
+//  height: 40%;
+//  background: linear-gradient(transparent, black);
+//}
+//
+//.slide div {
+//  width: 300px;
+//  height: 500px;
+//  z-index: 0;
+//}
+
+/******************************************* SLIDER: END ************************************************/

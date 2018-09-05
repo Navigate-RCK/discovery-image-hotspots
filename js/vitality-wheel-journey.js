@@ -77,43 +77,186 @@
 
 jQuery(document).ready(function($){
     console.log("document ready");
+
     var vitHealthPopup = "vit-health-popup";
     var vitHealthContent = "vit-health-popup-content";
     var hotspotClass = "vit-health-wheel-hotspot";
     var animationIdAttr = "data-animation-index";
     var hotspotEl = $(`.${hotspotClass}[${animationIdAttr}]`);
     var hotspotElLength = $(hotspotEl).length;
-    var showPulse = true;
+    var hsIcon = "hs-icon";
+
+    var pulseSelected = function(currentIndex, nextIndex) {
+        if (nextIndex <= hotspotElLength) {
+            $(`.${hotspotClass}`).find(`.${hsIcon}`).removeClass("selected").addClass("unselected");
+            $(`.${hotspotClass}`).removeClass("pulse");
+            $(`.${hotspotClass}[${animationIdAttr}="${currentIndex}"]`).find(`.${hsIcon}`).removeClass("unselected").addClass("selected");
+            $(`.${hotspotClass}[${animationIdAttr}="${currentIndex}"]`).removeClass("pulse");
+            if (nextIndex < hotspotElLength-1) {
+                $(`.${hotspotClass}[${animationIdAttr}="${nextIndex}"]`).addClass("pulse");
+            }
+        }
+    };
+
+    var slider;
+    if (navigator.msMaxTouchPoints) {
+
+        $('#slider').addClass('ms-touch');
+
+        $('#slider').on('scroll', function() {
+            $('.slide-image').css('transform','translate3d(-' + (100-$(this).scrollLeft()/6) + 'px,0,0)');
+        });
+
+    } else {
+
+        var slideLength = $(".slide-wrapper").length;
+
+        slider = {
+
+            el: {
+                slider: $("#slider"),
+                holder: $(".holder"),
+                imgSlide: $(".slide-image")
+            },
+
+            slideWidth: $('#slider').width(),
+            touchstartx: undefined,
+            touchmovex: undefined,
+            movex: undefined,
+            index: 0,
+            longTouch: undefined,
+            slideCount: slideLength,
+
+            init: function() {
+                this.bindUIEvents();
+            },
+
+            bindUIEvents: function() {
+
+                this.el.holder.on("touchstart", function(event) {
+                    slider.start(event);
+                });
+
+                this.el.holder.on("touchmove", function(event) {
+                    slider.move(event);
+                });
+
+                this.el.holder.on("touchend", function(event) {
+                    slider.end(event);
+                });
+
+            },
+
+            start: function(event) {
+                // Test for flick.
+                this.longTouch = false;
+                setTimeout(function() {
+                    window.slider.longTouch = true;
+                }, 250);
+
+                // Get the original touch position.
+                this.touchstartx =  event.originalEvent.touches[0].pageX;
+
+                // The movement gets all janky if there's a transition on the elements.
+                $('.animate').removeClass('animate');
+            },
+
+            move: function(event) {
+                // Continuously return touch position.
+                this.touchmovex =  event.originalEvent.touches[0].pageX;
+                // Calculate distance to translate holder.
+                this.movex = this.index*this.slideWidth + (this.touchstartx - this.touchmovex);
+                // Defines the speed the images should move at.
+                var panx = 100-this.movex/6;
+                if (this.movex < 600) { // Makes the holder stop moving when there is no more content.
+                    this.el.holder.css('transform','translate3d(-' + this.movex + 'px,0,0)');
+                }
+                if (panx < 100) { // Corrects an edge-case problem where the background image moves without the container moving.
+                    this.el.imgSlide.css('transform','translate3d(-' + panx + 'px,0,0)');
+                }
+            },
+
+            end: function(event) {
+                // Calculate the distance swiped.
+                var absMove = Math.abs(this.index*this.slideWidth - this.movex);
+                // Calculate the index. All other calculations are based on the index.
+                if (absMove > this.slideWidth/2 || this.longTouch === false) {
+                    if (this.movex > this.index*this.slideWidth && this.index < this.slideCount-1) {
+                        this.index++;
+                    } else if (this.movex < this.index*this.slideWidth && this.index > 0) {
+                        this.index--;
+                    }
+                }
+                // Move and animate the elements.
+                this.el.holder.addClass('animate').css('transform', 'translate3d(-' + this.index*this.slideWidth + 'px,0,0)');
+
+                pulseSelected(this.index, this.index + 1);
+
+            },
+
+            slideByIndex: function(index) {
+                this.index = index;
+                // Move and animate the elements.
+                this.el.holder.addClass('animate').css('transform', 'translate3d(-' + this.index*this.slideWidth + 'px,0,0)');
+            }
+
+        };
+
+        slider.init();
+    }
+
+    var slideOnClick = function (index) {
+        if (slider) {
+            slider.slideByIndex(index);
+        }
+    };
+
+    $("button").click(function () {
+        console.log("button click - move to index 2");
+        slideOnClick(2);
+    });
+
     $(hotspotEl).click(function () {
         var currentIndex = Number($(this).attr(animationIdAttr));
         var prevIndex = currentIndex-1;
         var nextIndex = currentIndex+1;
         console.log(currentIndex);
         console.log(hotspotElLength-1);
-        if (nextIndex < hotspotElLength && showPulse) {
+
+        pulseSelected(currentIndex, nextIndex);
+
+ /*       if (nextIndex <= hotspotElLength) {
+            $(`.${hotspotClass}`).find(`.${hsIcon}`).removeClass("selected").addClass("unselected");
+            $(this).find(`.${hsIcon}`).removeClass("unselected").addClass("selected");
+            $(this).removeClass("pulse");
             // $(`.${hotspotClass}[${animationIdAttr}="${nextIndex}"]`).toggleClass("visible");
             // $(`.${hotspotClass}[${animationIdAttr}="${nextIndex}"]`).fadeIn();
-            $(`.${hotspotClass}[${animationIdAttr}="${nextIndex}"]`).fadeIn().addClass("visible pulse");
-            $(this).removeClass("pulse");
-
-            // if (nextIndex < hotspotElLength-1) {
-            //     $(`.${hotspotClass}[${animationIdAttr}="${nextIndex}"]`).addClass("visible pulse");
-            // }
-        } else if (currentIndex === hotspotElLength-1 && showPulse) {
-            $(this).removeClass("pulse");
-            showPulse = false;
+            // $(`.${hotspotClass}[${animationIdAttr}="${currentIndex}"]`).addClass("visible");
+            // $(`.${hotspotClass}[${animationIdAttr}="${nextIndex}"]>*[class~icon]`).addClass("visible");
+            if (nextIndex < hotspotElLength-1) {
+                $(`.${hotspotClass}[${animationIdAttr}="${nextIndex}"]`).addClass("pulse");
+            }
+        } else if (currentIndex === hotspotElLength-1) {
+            // $(this).removeClass("pulse");
         }
 
-        if ($(`.${vitHealthPopup}`).hasClass("hidden")) {
-            $(`.${vitHealthPopup}`).slideToggle("fast").removeClass("hidden");
-        }
+        if (currentIndex == 0) {
+            // $(`.${hotspotClass}[${animationIdAttr}="${currentIndex}"]`).removeClass("pulse");
+            // $(`.${hotspotClass}[${animationIdAttr}="${nextIndex}"]>*[class~icon]`).addClass("visible");
+        }*/
 
-        $(`.${vitHealthContent}[${animationIdAttr}]`).hide();
+        slideOnClick(currentIndex);
 
-        $(`.${vitHealthContent}[${animationIdAttr}="${currentIndex}"]`).fadeIn();
+        // if ($(`.${vitHealthPopup}`).hasClass("hidden")) {
+        //     $(`.${vitHealthPopup}`).slideToggle("fast").removeClass("hidden");
+        // }
+        //
+        // $(`.${vitHealthContent}[${animationIdAttr}]`).hide();
+        //
+        // $(`.${vitHealthContent}[${animationIdAttr}="${currentIndex}"]`).fadeIn();
 
         // if (currentIndex > 0) {
         //     $(`.${vitHealthContent}[${animationIdAttr}="${prevIndex}"]`).hide();
         // }
-    })
+    });
 });

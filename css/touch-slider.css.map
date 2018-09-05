@@ -1,1 +1,1 @@
-{"version":3,"sourceRoot":"","sources":[],"names":[],"mappings":"","file":"touch-slider.css"}
+{"version":3,"sourceRoot":"","sources":["../scss/touch-slider.scss"],"names":[],"mappings":"AAAQ;AAER;EACE;;;AAGF;AAAA;EAEE;;;AAGF;EACE;EACA;EACA;;;AAGF;EACE;EACA;EACA;;;AAOF;EACE;EACA;EACA;;;AAGF;EACE;EACA;EAEA;AACA;EAEA;AACA;EAEA;AACA;EAEA;AACA;;;AAGF;EACE;EACA;EACA;EACA;;;AAGF;EACE;EACA;EACA;EACA;EACA;EACA;;;AAGF;EACE;EACA;;;AAGF;EACE;EACA;EACA;EACA;EACA;EACA;EACA;EACA;;;AAGF;EACE;EACA;EACA;;;AAcF;EACE;EACA;EACA","file":"touch-slider.css"}
