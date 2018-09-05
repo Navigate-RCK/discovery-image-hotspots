@@ -90,8 +90,8 @@
   justify-content: center;
 }
 .vit-health-wheel-container .vit-health-wheel-disc .disc-inner {
-  width: 50vw;
-  height: 50vw;
+  width: 60vw;
+  height: 60vw;
   background: white;
   border-radius: 50%;
 }
@@ -118,102 +118,103 @@
   animation-delay: 2s;
 }
 .vit-health-wheel-container .vit-health-wheel-overlay .vit-health-wheel-hotspot {
-  width: 15vw;
-  height: 15vw;
+  width: 12.5vw;
+  height: 12.5vw;
   cursor: pointer;
   position: absolute;
   justify-content: center;
   align-items: center;
-  display: none;
+  opacity: 0.3;
+  display: flex;
 }
 .vit-health-wheel-container .vit-health-wheel-overlay .vit-health-wheel-hotspot.light-blue {
   background-color: #dbe0ee;
 }
 .vit-health-wheel-container .vit-health-wheel-overlay .vit-health-wheel-hotspot.visible {
-  display: flex !important;
+  opacity: 1;
 }
 .vit-health-wheel-container .vit-health-wheel-overlay .vit-health-wheel-hotspot .outer-icon {
-  font-size: 10vw;
+  font-size: 8vw;
   color: #4c4d4f;
 }
 .vit-health-wheel-container .vit-health-wheel-overlay .vit-health-wheel-hotspot .inner-icon {
-  font-size: 7.5vw;
+  font-size: 6.5vw;
   color: #4c4d4f;
 }
 .vit-health-wheel-container .vit-health-wheel-overlay .vit-health-wheel-hotspot[data-animation-index="0"] {
-  left: -35vw;
-  top: -31vw;
+  left: -34vw;
+  top: -33vw;
 }
 .vit-health-wheel-container .vit-health-wheel-overlay .vit-health-wheel-hotspot[data-animation-index="1"] {
   left: -19vw;
-  top: -40vw;
+  top: -41vw;
 }
 .vit-health-wheel-container .vit-health-wheel-overlay .vit-health-wheel-hotspot[data-animation-index="2"] {
   left: 0vw;
-  top: -42vw;
+  top: -43vw;
 }
 .vit-health-wheel-container .vit-health-wheel-overlay .vit-health-wheel-hotspot[data-animation-index="3"] {
   left: 17vw;
-  top: -34vw;
+  top: -36vw;
 }
 .vit-health-wheel-container .vit-health-wheel-overlay .vit-health-wheel-hotspot[data-animation-index="4"] {
-  left: 27vw;
-  top: 1vw;
+  left: 30vw;
+  top: 3vw;
 }
 .vit-health-wheel-container .vit-health-wheel-overlay .vit-health-wheel-hotspot[data-animation-index="5"] {
-  left: 19vw;
-  top: 15vw;
+  left: 22vw;
+  top: 17vw;
 }
 .vit-health-wheel-container .vit-health-wheel-overlay .vit-health-wheel-hotspot[data-animation-index="6"] {
-  left: 2vw;
-  top: 25vw;
+  left: 4vw;
+  top: 29vw;
 }
 .vit-health-wheel-container .vit-health-wheel-overlay .vit-health-wheel-hotspot[data-animation-index="7"] {
-  left: -17vw;
-  top: 25vw;
+  left: -18vw;
+  top: 29vw;
 }
 .vit-health-wheel-container .vit-health-wheel-overlay .vit-health-wheel-hotspot[data-animation-index="8"] {
-  left: -32vw;
-  top: 14vw;
+  left: -35vw;
+  top: 16vw;
 }
 .vit-health-wheel-container .vit-health-wheel-overlay .vit-health-wheel-hotspot[data-animation-index="9"] {
-  left: -41vw;
+  left: -43vw;
   top: -2vw;
 }
 .vit-health-wheel-container .vit-health-wheel-overlay .vit-health-wheel-hotspot[data-animation-index="10"] {
-  left: -1vw;
-  top: -25vw;
+  left: 17vw;
+  top: -5vw;
 }
 .vit-health-wheel-container .vit-health-wheel-overlay .vit-health-wheel-hotspot[data-animation-index="11"] {
-  left: 10vw;
-  top: -13vw;
+  left: 11vw;
+  top: 10vw;
 }
 .vit-health-wheel-container .vit-health-wheel-overlay .vit-health-wheel-hotspot[data-animation-index="12"] {
-  left: 8vw;
-  top: 2vw;
+  left: -2vw;
+  top: 18vw;
 }
 .vit-health-wheel-container .vit-health-wheel-overlay .vit-health-wheel-hotspot[data-animation-index="13"] {
-  left: -5vw;
-  top: 8vw;
+  left: -17vw;
+  top: 15vw;
 }
 .vit-health-wheel-container .vit-health-wheel-overlay .vit-health-wheel-hotspot[data-animation-index="14"] {
-  left: -18vw;
-  top: 6vw;
+  left: -28vw;
+  top: 5vw;
 }
 .vit-health-wheel-container .vit-health-wheel-overlay .vit-health-wheel-hotspot[data-animation-index="15"] {
-  left: -24vw;
-  top: -7vw;
+  left: -31vw;
+  top: -9vw;
 }
 
 .mobile-popup-container {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 7.5vw;
+  margin-top: 5vw;
 }
 .mobile-popup-container .vit-health-popup {
   width: 80vw;
-  height: 60vw;
+  height: 50vw;
   box-shadow: 3px 5px 24px 1px rgba(0, 0, 0, 0.2);
 }
 .mobile-popup-container .vit-health-popup.hidden {

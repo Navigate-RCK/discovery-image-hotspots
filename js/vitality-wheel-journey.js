@@ -83,13 +83,14 @@ jQuery(document).ready(function($){
     var animationIdAttr = "data-animation-index";
     var hotspotEl = $(`.${hotspotClass}[${animationIdAttr}]`);
     var hotspotElLength = $(hotspotEl).length;
+    var showPulse = true;
     $(hotspotEl).click(function () {
-        var currentIndex = $(this).attr(animationIdAttr);
-        var prevIndex = Number(currentIndex)-1;
-        var nextIndex = Number(currentIndex)+1;
+        var currentIndex = Number($(this).attr(animationIdAttr));
+        var prevIndex = currentIndex-1;
+        var nextIndex = currentIndex+1;
         console.log(currentIndex);
         console.log(hotspotElLength-1);
-        if (nextIndex < hotspotElLength) {
+        if (nextIndex < hotspotElLength && showPulse) {
             // $(`.${hotspotClass}[${animationIdAttr}="${nextIndex}"]`).toggleClass("visible");
             // $(`.${hotspotClass}[${animationIdAttr}="${nextIndex}"]`).fadeIn();
             $(`.${hotspotClass}[${animationIdAttr}="${nextIndex}"]`).fadeIn().addClass("visible pulse");
@@ -98,8 +99,9 @@ jQuery(document).ready(function($){
             // if (nextIndex < hotspotElLength-1) {
             //     $(`.${hotspotClass}[${animationIdAttr}="${nextIndex}"]`).addClass("visible pulse");
             // }
-        } else if (currentIndex == hotspotElLength-1) {
+        } else if (currentIndex === hotspotElLength-1 && showPulse) {
             $(this).removeClass("pulse");
+            showPulse = false;
         }
 
         if ($(`.${vitHealthPopup}`).hasClass("hidden")) {
