@@ -81,22 +81,45 @@ jQuery(document).ready(function($){
     var vitHealthPopup = "vit-health-popup";
     var vitHealthContent = "vit-health-popup-content";
     var hotspotClass = "vit-health-wheel-hotspot";
-    var animationIdAttr = "data-animation-index";
-    var hotspotEl = $(`.${hotspotClass}[${animationIdAttr}]`);
+    var hotspotAnimationIdAttr = "data-animation-index";
+    var honeyCombClass = "honeycomb-holder";
+    var honeycombAnimationIdAttr = "data-honeycomb-animation-index";
+    var hotspotEl = $(`.${hotspotClass}[${hotspotAnimationIdAttr}]`);
     var hotspotElLength = $(hotspotEl).length;
     var hsIcon = "hs-icon";
+    var hsIconSvg = "hs-icon-svg";
 
     var pulseSelected = function(currentIndex, nextIndex) {
         if (nextIndex <= hotspotElLength) {
-            $(`.${hotspotClass}`).find(`.${hsIcon}`).removeClass("selected").addClass("unselected");
+            // $(`.${hotspotClass}`).find(`.${hsIcon}, .${hsIconSvg}`).removeClass("selected").addClass("unselected");
             $(`.${hotspotClass}`).removeClass("pulse");
-            $(`.${hotspotClass}[${animationIdAttr}="${currentIndex}"]`).find(`.${hsIcon}`).removeClass("unselected").addClass("selected");
-            $(`.${hotspotClass}[${animationIdAttr}="${currentIndex}"]`).removeClass("pulse");
+            // $(`.${hotspotClass}[${hotspotAnimationIdAttr}="${currentIndex}"]`).find(`.${hsIcon}`).removeClass("unselected").addClass("selected");
+            $(`.${hotspotClass}[${hotspotAnimationIdAttr}="${currentIndex}"]`).removeClass("pulse");
             if (nextIndex < hotspotElLength-1) {
-                $(`.${hotspotClass}[${animationIdAttr}="${nextIndex}"]`).addClass("pulse");
+                $(`.${hotspotClass}[${hotspotAnimationIdAttr}="${nextIndex}"]`).addClass("pulse");
             }
         }
     };
+
+    var showIcons = function() {
+        var delay = 500;
+
+        $(`.${honeyCombClass}`).each(function (index) {
+            setTimeout(function(){
+                $(`.${honeyCombClass}[${honeycombAnimationIdAttr}="${index}"]`).addClass("animate-honeycomb")
+            },delay);
+            delay += (100 + (2 * (index+1)));
+        });
+
+        $(`.${hotspotClass}`).each(function (index) {
+            setTimeout(function(){
+                $(`.${hotspotClass}[${hotspotAnimationIdAttr}="${index}"]`).addClass("animate-hotspot")
+            },delay);
+            delay += (100 + (2 * (index+1)));
+        });
+    };
+
+    showIcons();
 
     var slider;
     if (navigator.msMaxTouchPoints) {
@@ -217,11 +240,11 @@ jQuery(document).ready(function($){
     });
 
     $(hotspotEl).click(function () {
-        var currentIndex = Number($(this).attr(animationIdAttr));
+        var currentIndex = Number($(this).attr(hotspotAnimationIdAttr));
         var prevIndex = currentIndex-1;
         var nextIndex = currentIndex+1;
-        console.log(currentIndex);
-        console.log(hotspotElLength-1);
+        // console.log(currentIndex);
+        // console.log(hotspotElLength-1);
 
         pulseSelected(currentIndex, nextIndex);
 

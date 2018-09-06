@@ -14,63 +14,99 @@
     <!--<script type="text/javascript" src="http://navigatehost.co.za/digital_discovery/custom-dev/progress-bar/js/progress-bar-visibility.js"></script>-->
 
 
-
     <title>Vitality Wheel Journey</title>
 </head>
 <body>
 <div class="vit-health-wheel-container">
     <div class="vit-health-wheel-disc">
-        <div class="disc-inner">
-        </div>
+        <!--<div class="disc-inner">-->
+        <img class="vit-wheel-disc-bg-img" src="../assets/circle_blue_arrow_labels.png" alt="">
     </div>
     <div class="vit-health-wheel-overlay">
-        <div class="vit-health-wheel-hotspot pulse" data-animation-index="0">
-            <i class="ti-user hs-icon"></i>
+        <div class="vit-health-wheel-honeycomb-cont">
+            <div class="class honeycomb-grid">
+                <div class="honeycomb-row">
+                    <div class="honeycomb-holder" data-honeycomb-animation-index="0">
+                        <div class="honeycomb-label">
+                            Health checks
+                        </div>
+                        <img class="honeycomb-icon" src="../assets/icons/honeycomb/health-checks-completed.svg"
+                             alt="health-checks icon">
+                    </div>
+                    <div class="honeycomb-holder" data-honeycomb-animation-index="1">
+                        <div class="honeycomb-label">
+                            HealthyFood
+                        </div>
+                        <img class="honeycomb-icon" src="../assets/icons/honeycomb/healthyfood-completed.svg"
+                             alt="healthy food completed icon">
+                    </div>
+                </div>
+                <div class="honeycomb-row">
+                    <div class="honeycomb-holder" data-honeycomb-animation-index="3">
+                        <img class="honeycomb-icon" src="../assets/icons/honeycomb/med-adherence-completed.svg"
+                             alt="medical adherence icon">
+                        <div class="honeycomb-label">
+                            Medicine tracker
+                        </div>
+                    </div>
+                    <div class="honeycomb-holder" data-honeycomb-animation-index="2">
+                        <img class="honeycomb-icon" src="../assets/icons/honeycomb/weight-management-completed.svg"
+                             alt="weight management icon">
+                        <div class="honeycomb-label">
+                            Weight Management
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="vit-health-wheel-hotspot" data-animation-index="0">
+            <!--<i class="ti-user hs-icon selected"></i>-->
+            <img src="../assets/icons/100px/activeman.svg" alt="" class="hs-icon-svg selected">
         </div>
         <div class="vit-health-wheel-hotspot" data-animation-index="1">
-            <i class="ti-receipt hs-icon"></i>
+            <img src="../assets/icons/100px/document.svg" alt="" class="hs-icon-svg selected">
         </div>
         <div class="vit-health-wheel-hotspot" data-animation-index="2">
-            <i class="ti-files hs-icon"></i>
+            <img src="../assets/icons/100px/salad.svg" alt="" class="hs-icon-svg selected">
         </div>
         <div class="vit-health-wheel-hotspot" data-animation-index="3">
-            <i class="ti-pulse hs-icon"></i>
+            <img src="../assets/icons/100px/family.svg" alt="" class="hs-icon-svg selected">
         </div>
         <div class="vit-health-wheel-hotspot" data-animation-index="4">
-            <i class="ti-shield hs-icon"></i>
+            <img src="../assets/icons/100px/healthyfood.svg" alt="" class="hs-icon-svg selected">
         </div>
         <div class="vit-health-wheel-hotspot" data-animation-index="5">
-            <i class="ti-printer hs-icon"></i>
+            <img src="../assets/icons/100px/weight.svg" alt="" class="hs-icon-svg selected">
         </div>
         <div class="vit-health-wheel-hotspot" data-animation-index="6">
-            <i class="ti-package hs-icon"></i>
+            <img src="../assets/icons/100px/dinnerset.svg" alt="" class="hs-icon-svg selected">
         </div>
         <div class="vit-health-wheel-hotspot" data-animation-index="7">
-            <i class="ti-microphone hs-icon"></i>
+            <img src="../assets/icons/100px/popcorn.svg" alt="" class="hs-icon-svg selected">
         </div>
         <div class="vit-health-wheel-hotspot" data-animation-index="8">
-            <i class="ti-gift hs-icon"></i>
+            <img src="../assets/icons/100px/flight.svg" alt="" class="hs-icon-svg selected">
         </div>
         <div class="vit-health-wheel-hotspot" data-animation-index="9">
-            <i class="ti-archive hs-icon"></i>
+            <img src="../assets/icons/100px/card.svg" alt="" class="hs-icon-svg selected">
         </div>
         <div class="vit-health-wheel-hotspot" data-animation-index="10">
-            <i class="ti-bar-chart-alt hs-icon"></i>
+            <img src="../assets/icons/100px/25perct.svg" alt="" class="hs-icon-svg selected">
         </div>
         <div class="vit-health-wheel-hotspot" data-animation-index="11">
-            <i class="ti-hummer hs-icon"></i>
+            <img src="../assets/icons/100px/75perct.svg" alt="" class="hs-icon-svg selected">
         </div>
         <div class="vit-health-wheel-hotspot" data-animation-index="12">
-            <i class="ti-video-camera hs-icon"></i>
+            <img src="../assets/icons/100px/100perct.svg" alt="" class="hs-icon-svg selected">
         </div>
         <div class="vit-health-wheel-hotspot" data-animation-index="13">
-            <i class="ti-help hs-icon"></i>
+            <img src="../assets/icons/100px/iwatch.svg" alt="" class="hs-icon-svg selected">
         </div>
         <div class="vit-health-wheel-hotspot" data-animation-index="14">
-            <i class="ti-mouse-alt hs-icon"></i>
+            <img src="../assets/icons/100px/coffee.svg" alt="" class="hs-icon-svg selected">
         </div>
         <div class="vit-health-wheel-hotspot" data-animation-index="15">
-            <i class="ti-star hs-icon"></i>
+            <img src="../assets/icons/100px/moneybag.svg" alt="" class="hs-icon-svg selected">
         </div>
     </div>
 </div>
@@ -82,7 +118,7 @@
                 <div class="slide-wrapper">
                     <div class="slide" data-animation-index="0">
                         <!--<div class="close-container">-->
-                            <!--<i class="ti-close"></i>-->
+                        <!--<i class="ti-close"></i>-->
                         <!--</div>-->
                         <div class="slide-content">
                             <div class="sl-con-left">
@@ -310,28 +346,28 @@
     </div>
 </div>
 <!--<div class="mobile-popup-container">-->
-    <!--<div class="vit-health-popup hidden">-->
-        <!--<div class="vit-health-popup-content" data-animation-index="0">-->
-            <!--<div class="vit-health-popup-header"></div>-->
-            <!--<div class="vit-health-popup-body">Get active in a variety of ways</div>-->
-            <!--<div class="vit-health-popup-footer"></div>-->
-        <!--</div>-->
-        <!--<div class="vit-health-popup-content" data-animation-index="1">-->
-            <!--<div class="vit-health-popup-header"></div>-->
-            <!--<div class="vit-health-popup-body">Complete your health checks and assessments</div>-->
-            <!--<div class="vit-health-popup-footer"></div>-->
-        <!--</div>-->
-        <!--<div class="vit-health-popup-content" data-animation-index="2">-->
-            <!--<div class="vit-health-popup-header"></div>-->
-            <!--<div class="vit-health-popup-body">HealthyFood purchases</div>-->
-            <!--<div class="vit-health-popup-footer"></div>-->
-        <!--</div>-->
-        <!--<div class="vit-health-popup-content" data-animation-index="3">-->
-            <!--<div class="vit-health-popup-header"></div>-->
-            <!--<div class="vit-health-popup-body">Get healthy as a family</div>-->
-            <!--<div class="vit-health-popup-footer"></div>-->
-        <!--</div>-->
-    <!--</div>-->
+<!--<div class="vit-health-popup hidden">-->
+<!--<div class="vit-health-popup-content" data-animation-index="0">-->
+<!--<div class="vit-health-popup-header"></div>-->
+<!--<div class="vit-health-popup-body">Get active in a variety of ways</div>-->
+<!--<div class="vit-health-popup-footer"></div>-->
+<!--</div>-->
+<!--<div class="vit-health-popup-content" data-animation-index="1">-->
+<!--<div class="vit-health-popup-header"></div>-->
+<!--<div class="vit-health-popup-body">Complete your health checks and assessments</div>-->
+<!--<div class="vit-health-popup-footer"></div>-->
+<!--</div>-->
+<!--<div class="vit-health-popup-content" data-animation-index="2">-->
+<!--<div class="vit-health-popup-header"></div>-->
+<!--<div class="vit-health-popup-body">HealthyFood purchases</div>-->
+<!--<div class="vit-health-popup-footer"></div>-->
+<!--</div>-->
+<!--<div class="vit-health-popup-content" data-animation-index="3">-->
+<!--<div class="vit-health-popup-header"></div>-->
+<!--<div class="vit-health-popup-body">Get healthy as a family</div>-->
+<!--<div class="vit-health-popup-footer"></div>-->
+<!--</div>-->
+<!--</div>-->
 <!--</div>-->
 </body>
 </html>

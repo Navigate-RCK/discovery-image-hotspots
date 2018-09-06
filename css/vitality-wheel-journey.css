@@ -80,14 +80,18 @@
   position: relative;
 }
 .vit-health-wheel-container .vit-health-wheel-disc {
-  background: #dbe0ee;
   width: 90vw;
   height: 90vw;
-  border-radius: 50%;
   margin: 0 auto;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+.vit-health-wheel-container .vit-health-wheel-disc .vit-wheel-disc-bg-img {
+  width: 100%;
+  animation-name: grow-animate;
+  animation-duration: 1s;
+  animation-iteration-count: 1;
 }
 .vit-health-wheel-container .vit-health-wheel-disc .disc-inner {
   width: 60vw;
@@ -99,6 +103,49 @@
   position: absolute;
   top: 50%;
   left: 50%;
+}
+.vit-health-wheel-container .vit-health-wheel-overlay .vit-health-wheel-honeycomb-cont {
+  /* background: grey; */
+  top: -16vw;
+  left: -12vw;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.vit-health-wheel-container .vit-health-wheel-overlay .vit-health-wheel-honeycomb-cont .honeycomb-grid {
+  font-family: Sans-serif;
+}
+.vit-health-wheel-container .vit-health-wheel-overlay .vit-health-wheel-honeycomb-cont .honeycomb-grid .honeycomb-row:not(last-child) {
+  margin-bottom: 2vw;
+}
+.vit-health-wheel-container .vit-health-wheel-overlay .vit-health-wheel-honeycomb-cont .honeycomb-grid .honeycomb-row {
+  display: flex;
+  align-items: flex-end;
+}
+.vit-health-wheel-container .vit-health-wheel-overlay .vit-health-wheel-honeycomb-cont .honeycomb-grid .honeycomb-row .honeycomb-holder:not(last-child) {
+  margin-right: 4vw;
+}
+.vit-health-wheel-container .vit-health-wheel-overlay .vit-health-wheel-honeycomb-cont .honeycomb-grid .honeycomb-row .honeycomb-holder {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+}
+.vit-health-wheel-container .vit-health-wheel-overlay .vit-health-wheel-honeycomb-cont .honeycomb-grid .honeycomb-row .honeycomb-holder .honeycomb-icon {
+  width: 8vw;
+  height: 8vw;
+  margin-bottom: 0.5vw;
+  margin-top: 0.5vw;
+}
+.vit-health-wheel-container .vit-health-wheel-overlay .vit-health-wheel-honeycomb-cont .honeycomb-grid .honeycomb-row .honeycomb-holder .honeycomb-label {
+  text-align: center;
+  font-size: 2vw;
+}
+.vit-health-wheel-container .vit-health-wheel-overlay .vit-health-wheel-honeycomb-cont .honeycomb-grid .honeycomb-row .honeycomb-holder.animate-honeycomb {
+  display: flex !important;
+  animation-name: grow-animate;
+  animation-duration: 1s;
+  animation-iteration-count: 1;
 }
 .vit-health-wheel-container .vit-health-wheel-overlay .pulse {
   opacity: 1 !important;
@@ -124,7 +171,13 @@
   position: absolute;
   justify-content: center;
   align-items: center;
-  display: flex;
+  display: none;
+}
+.vit-health-wheel-container .vit-health-wheel-overlay .vit-health-wheel-hotspot.animate-hotspot {
+  display: flex !important;
+  animation-name: grow-animate;
+  animation-duration: 1s;
+  animation-iteration-count: 1;
 }
 .vit-health-wheel-container .vit-health-wheel-overlay .vit-health-wheel-hotspot.light-blue {
   background-color: #dbe0ee;
@@ -143,69 +196,80 @@
 .vit-health-wheel-container .vit-health-wheel-overlay .vit-health-wheel-hotspot .hs-icon.selected {
   opacity: 1;
 }
+.vit-health-wheel-container .vit-health-wheel-overlay .vit-health-wheel-hotspot .hs-icon-svg {
+  width: 6.5vw;
+  color: #4c4d4f;
+  opacity: 0.3;
+}
+.vit-health-wheel-container .vit-health-wheel-overlay .vit-health-wheel-hotspot .hs-icon-svg.unselected {
+  opacity: 0.3;
+}
+.vit-health-wheel-container .vit-health-wheel-overlay .vit-health-wheel-hotspot .hs-icon-svg.selected {
+  opacity: 1;
+}
 .vit-health-wheel-container .vit-health-wheel-overlay .vit-health-wheel-hotspot[data-animation-index="0"] {
-  left: -34vw;
-  top: -33vw;
+  left: -31vw;
+  top: -32vw;
 }
 .vit-health-wheel-container .vit-health-wheel-overlay .vit-health-wheel-hotspot[data-animation-index="1"] {
-  left: -19vw;
-  top: -41vw;
+  left: -16vw;
+  top: -40vw;
 }
 .vit-health-wheel-container .vit-health-wheel-overlay .vit-health-wheel-hotspot[data-animation-index="2"] {
-  left: 0vw;
-  top: -43vw;
+  left: 3vw;
+  top: -40vw;
 }
 .vit-health-wheel-container .vit-health-wheel-overlay .vit-health-wheel-hotspot[data-animation-index="3"] {
-  left: 17vw;
-  top: -36vw;
+  left: 18vw;
+  top: -31vw;
 }
 .vit-health-wheel-container .vit-health-wheel-overlay .vit-health-wheel-hotspot[data-animation-index="4"] {
-  left: 30vw;
-  top: 3vw;
+  left: 22vw;
+  top: 13vw;
 }
 .vit-health-wheel-container .vit-health-wheel-overlay .vit-health-wheel-hotspot[data-animation-index="5"] {
-  left: 22vw;
-  top: 17vw;
+  left: 11vw;
+  top: 23vw;
 }
 .vit-health-wheel-container .vit-health-wheel-overlay .vit-health-wheel-hotspot[data-animation-index="6"] {
-  left: 4vw;
-  top: 29vw;
+  left: -7vw;
+  top: 28vw;
 }
 .vit-health-wheel-container .vit-health-wheel-overlay .vit-health-wheel-hotspot[data-animation-index="7"] {
-  left: -18vw;
-  top: 29vw;
+  left: -25vw;
+  top: 22vw;
 }
 .vit-health-wheel-container .vit-health-wheel-overlay .vit-health-wheel-hotspot[data-animation-index="8"] {
-  left: -35vw;
-  top: 16vw;
+  left: -36vw;
+  top: 10vw;
 }
 .vit-health-wheel-container .vit-health-wheel-overlay .vit-health-wheel-hotspot[data-animation-index="9"] {
-  left: -43vw;
-  top: -2vw;
+  left: -41vw;
+  top: -4vw;
 }
 .vit-health-wheel-container .vit-health-wheel-overlay .vit-health-wheel-hotspot[data-animation-index="10"] {
   left: 17vw;
-  top: -5vw;
+  top: -3vw;
 }
 .vit-health-wheel-container .vit-health-wheel-overlay .vit-health-wheel-hotspot[data-animation-index="11"] {
-  left: 11vw;
-  top: 10vw;
+  left: 12vw;
+  top: 8vw;
 }
 .vit-health-wheel-container .vit-health-wheel-overlay .vit-health-wheel-hotspot[data-animation-index="12"] {
-  left: -2vw;
-  top: 18vw;
+  left: 2vw;
+  top: 16vw;
 }
 .vit-health-wheel-container .vit-health-wheel-overlay .vit-health-wheel-hotspot[data-animation-index="13"] {
-  left: -17vw;
-  top: 15vw;
+  left: -15vw;
+  top: 16vw;
 }
 .vit-health-wheel-container .vit-health-wheel-overlay .vit-health-wheel-hotspot[data-animation-index="14"] {
-  left: -28vw;
-  top: 5vw;
+  left: -25vw;
+  top: 8vw;
 }
 .vit-health-wheel-container .vit-health-wheel-overlay .vit-health-wheel-hotspot[data-animation-index="15"] {
-  left: -31vw;
-  top: -9vw;
+  left: -30vw;
+  top: -3vw;
 }
 
 .mobile-popup-container {
@@ -241,6 +305,16 @@
   100% {
     transform: scale(1.2);
     opacity: 0;
+  }
+}
+@keyframes grow-animate {
+  0% {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
   }
 }
 /******************************************* ANIMATIONS: END ************************************************/

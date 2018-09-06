@@ -99,14 +99,21 @@ $vitality-light-blue: #dbe0ee;
   position: relative;
 
   .vit-health-wheel-disc {
-    background: $vitality-light-blue;
+    //background: $vitality-light-blue;
     width: 90vw;
     height: 90vw;
-    border-radius: 50%;
+    //border-radius: 50%;
     margin: 0 auto;
     display: flex;
     align-items: center;
     justify-content: center;
+
+    .vit-wheel-disc-bg-img {
+      width: 100%;
+      animation-name: grow-animate;
+      animation-duration: 1s;
+      animation-iteration-count: 1;
+    }
 
     .disc-inner {
       width: 60vw;
@@ -120,6 +127,60 @@ $vitality-light-blue: #dbe0ee;
     position: absolute;
     top: 50%;
     left: 50%;
+
+    .vit-health-wheel-honeycomb-cont {
+      /* background: grey; */
+      top: -16vw;
+      left: -12vw;
+      position: absolute;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      .honeycomb-grid {
+        font-family: Sans-serif;
+
+        .honeycomb-row:not(last-child) {
+          margin-bottom: 2vw;
+        }
+
+        .honeycomb-row {
+          display: flex;
+          align-items: flex-end;
+          //justify-content: center;
+
+          .honeycomb-holder:not(last-child) {
+            margin-right: 4vw;
+          }
+
+          .honeycomb-holder {
+            //width: 50%;
+            display: none;
+            flex-direction: column;
+            align-items: center;
+
+            .honeycomb-icon {
+              width: 8vw;
+              height: 8vw;
+              margin-bottom: 0.5vw;
+              margin-top:0.5vw;
+            }
+
+            .honeycomb-label {
+              text-align: center;
+              font-size: 2vw;
+            }
+
+            &.animate-honeycomb {
+              display: flex !important;
+              animation-name: grow-animate;
+              animation-duration: 1s;
+              animation-iteration-count: 1;
+            }
+          }
+        }
+      }
+    }
 
     .pulse {
       opacity: 1 !important;
@@ -152,8 +213,16 @@ $vitality-light-blue: #dbe0ee;
       position: absolute;
       justify-content: center;
       align-items: center;
-      display: flex;
-      //opacity: 0.3;
+      display: none;
+      //opacity: 0;
+
+      &.animate-hotspot {
+        display: flex !important;
+        animation-name: grow-animate;
+        animation-duration: 1s;
+        animation-iteration-count: 1;
+        //animation-delay: 1s;
+      }
 
       &.light-blue {
         background-color: $vitality-light-blue;
@@ -177,71 +246,86 @@ $vitality-light-blue: #dbe0ee;
         }
       }
 
+      .hs-icon-svg {
+        width: 6.5vw;
+        color: $discovery-dark-grey;
+        opacity: 0.3;
+
+        &.unselected {
+          opacity: 0.3;
+        }
+
+        &.selected {
+          opacity: 1;
+        }
+
+      }
+
     }
 
     .vit-health-wheel-hotspot[data-animation-index="0"] {
-      left: -34vw;
-      top: -33vw;
+      left: -31vw;
+      top: -32vw;
     }
     .vit-health-wheel-hotspot[data-animation-index="1"] {
-      left: -19vw;
-      top: -41vw;
+      left: -16vw;
+      top: -40vw;
     }
     .vit-health-wheel-hotspot[data-animation-index="2"] {
-      left: 0vw;
-      top: -43vw;
+      left: 3vw;
+      top: -40vw;
     }
     .vit-health-wheel-hotspot[data-animation-index="3"] {
-      left: 17vw;
-      top: -36vw;
+      left: 18vw;
+      top: -31vw;
     }
     .vit-health-wheel-hotspot[data-animation-index="4"] {
-      left: 30vw;
-      top: 3vw;
+      left: 22vw;
+      top: 13vw;
     }
     .vit-health-wheel-hotspot[data-animation-index="5"] {
-      left: 22vw;
-      top: 17vw;
+      left: 11vw;
+      top: 23vw;
     }
     .vit-health-wheel-hotspot[data-animation-index="6"] {
-      left: 4vw;
-      top: 29vw;
+      left: -7vw;
+      top: 28vw;
     }
     .vit-health-wheel-hotspot[data-animation-index="7"] {
-      left: -18vw;
-      top: 29vw;
+      left: -25vw;
+      top: 22vw;
     }
     .vit-health-wheel-hotspot[data-animation-index="8"] {
-      left: -35vw;
-      top: 16vw;
+      left: -36vw;
+      top: 10vw;
     }
     .vit-health-wheel-hotspot[data-animation-index="9"] {
-      left: -43vw;
-      top: -2vw;
+      left: -41vw;
+      top: -4vw;
     }
     .vit-health-wheel-hotspot[data-animation-index="10"] {
       left: 17vw;
-      top: -5vw;
+      top: -3vw;
     }
     .vit-health-wheel-hotspot[data-animation-index="11"] {
-      left: 11vw;
-      top: 10vw;
+      left: 12vw;
+      top: 8vw;
     }
     .vit-health-wheel-hotspot[data-animation-index="12"] {
-      left: -2vw;
-      top: 18vw;
+      left: 2vw;
+      top: 16vw;
     }
     .vit-health-wheel-hotspot[data-animation-index="13"] {
-      left: -17vw;
-      top: 15vw;
+      left: -15vw;
+      top: 16vw;
     }
     .vit-health-wheel-hotspot[data-animation-index="14"] {
-      left: -28vw;
-      top: 5vw;
+      left: -25vw;
+      top: 8vw;
     }
     .vit-health-wheel-hotspot[data-animation-index="15"] {
-      left: -31vw;
-      top: -9vw;
+      left: -30vw;
+      top: -3vw;
     }
   }
 }
@@ -291,11 +375,26 @@ $vitality-light-blue: #dbe0ee;
   }
 }
 
+@keyframes grow-animate {
+
+  0% {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+
+  50% {
+    //opacity: 0.75;
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
 /******************************************* ANIMATIONS: END ************************************************/
 
-
 /******************************************* SLIDER: START ************************************************/
-
 
 .animate {
   transition: transform 0.3s ease-out;
@@ -311,7 +410,6 @@ $vitality-light-blue: #dbe0ee;
 //  padding: 0;
 //  overflow: hidden;
 //}
-
 
 .ms-touch.slider {
   overflow-x: scroll;
@@ -415,7 +513,6 @@ $vitality-light-blue: #dbe0ee;
     }
   }
 }
-
 
 //.slide img {
 //  position: absolute;
