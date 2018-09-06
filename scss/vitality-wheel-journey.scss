@@ -128,6 +128,13 @@ $vitality-light-blue: #dbe0ee;
     top: 50%;
     left: 50%;
 
+    .animate-honeycomb {
+      display: flex !important;
+      animation-name: grow-animate;
+      animation-duration: 1s;
+      animation-iteration-count: 1;
+    }
+
     .vit-health-wheel-honeycomb-cont {
       /* background: grey; */
       top: -16vw;
@@ -170,13 +177,6 @@ $vitality-light-blue: #dbe0ee;
               text-align: center;
               font-size: 2vw;
             }
-
-            &.animate-honeycomb {
-              display: flex !important;
-              animation-name: grow-animate;
-              animation-duration: 1s;
-              animation-iteration-count: 1;
-            }
           }
         }
       }
@@ -213,7 +213,7 @@ $vitality-light-blue: #dbe0ee;
       position: absolute;
       justify-content: center;
       align-items: center;
-      display: none;
+      display: flex;
       //opacity: 0;
 
       &.animate-hotspot {
@@ -224,12 +224,22 @@ $vitality-light-blue: #dbe0ee;
         //animation-delay: 1s;
       }
 
+      &.pulse-animate {
+        animation-name: pulse-grow-animate;
+        animation-duration: 1s;
+        animation-iteration-count: infinite
+      }
+
       &.light-blue {
         background-color: $vitality-light-blue;
       }
 
       &.visible {
-        opacity: 1;
+        display: flex !important;
+      }
+
+      &.hidden {
+        display: none !important;
       }
 
       .hs-icon {
@@ -249,14 +259,14 @@ $vitality-light-blue: #dbe0ee;
       .hs-icon-svg {
         width: 6.5vw;
         color: $discovery-dark-grey;
-        opacity: 0.3;
+        //opacity: 0.3;
 
         &.unselected {
-          opacity: 0.3;
+          //opacity: 0.3;
         }
 
         &.selected {
-          opacity: 1;
+          //opacity: 1;
         }
 
       }
@@ -392,6 +402,22 @@ $vitality-light-blue: #dbe0ee;
   }
 }
 
+@keyframes pulse-grow-animate {
+
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.2);
+  }
+
+
+  100% {
+    transform: scale(1);
+  }
+}
+
 /******************************************* ANIMATIONS: END ************************************************/
 
 /******************************************* SLIDER: START ************************************************/
@@ -399,17 +425,6 @@ $vitality-light-blue: #dbe0ee;
 .animate {
   transition: transform 0.3s ease-out;
 }
-
-//html,
-//body {
-//  height: 100%;
-//}
-//
-//body {
-//  margin: 0;
-//  padding: 0;
-//  overflow: hidden;
-//}
 
 .ms-touch.slider {
   overflow-x: scroll;
@@ -428,9 +443,11 @@ $vitality-light-blue: #dbe0ee;
   /* Defines the y and x intervals to snap to when scrolling. */
 }
 
+$slider-width: 90vw;
+
 .holder {
-  width: calc(80vw * 16);
-  max-height: 500px;
+  width: calc(90vw * 16);
+  max-height: 40vw;
   height: 100%;
   overflow-y: hidden;
 }
@@ -439,10 +456,13 @@ $vitality-light-blue: #dbe0ee;
   display: flex;
   justify-content: center;
   margin-top: 5vw;
+  animation-name: grow-animate;
+  animation-duration: 1s;
+  animation-iteration-count: 1;
 
   .slider-wrap {
-    width: 80vw;
-    height: 60vw;
+    width: $slider-width;
+    height: 30vw;
     position: absolute;
     //left: 50%;
     //margin-left: -150px;
@@ -455,10 +475,9 @@ $vitality-light-blue: #dbe0ee;
       overflow: hidden;
 
       .slide-wrapper {
-        width: 80vw;
+        width: $slider-width;
         height: 100%;
         float: left;
-        height: 500px;
         position: relative;
         overflow: hidden;
 
@@ -471,10 +490,18 @@ $vitality-light-blue: #dbe0ee;
           //height: 100%;
           position: relative;
           font-family: Sans-serif;
+          -webkit-box-shadow: 0px 0px 12px 2px rgba(224,224,224,1);
+          -moz-box-shadow: 0px 0px 12px 2px rgba(224,224,224,1);
+          box-shadow: 0px 0px 12px 2px rgba(224,224,224,1);
+          margin: 0 auto;
+          top: 3vw;
+          border-radius: 10px;
+          width: 90%;
 
           .slide-content {
             display: flex;
             line-height: 1;
+            padding: 1em 0;
 
             .sl-con-icon {
               max-width: 11vw;
@@ -482,13 +509,13 @@ $vitality-light-blue: #dbe0ee;
 
             .sl-con-left {
               flex: 1;
-              padding: 1em;
+              padding: 0 1em;
               border-right: 1px solid grey;
             }
 
             .sl-con-right {
               flex: 4;
-              padding: 1em;
+              padding: 0 1em;
               display: flex;
               flex-direction: column;
               justify-content: center;
@@ -538,3 +565,6 @@ $vitality-light-blue: #dbe0ee;
 //}
 
 /******************************************* SLIDER: END ************************************************/
+
+/******************************************* SVG: START ************************************************/
+svg path {fill: #f15922 !important;}

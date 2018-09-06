@@ -104,6 +104,12 @@
   top: 50%;
   left: 50%;
 }
+.vit-health-wheel-container .vit-health-wheel-overlay .animate-honeycomb {
+  display: flex !important;
+  animation-name: grow-animate;
+  animation-duration: 1s;
+  animation-iteration-count: 1;
+}
 .vit-health-wheel-container .vit-health-wheel-overlay .vit-health-wheel-honeycomb-cont {
   /* background: grey; */
   top: -16vw;
@@ -141,12 +147,6 @@
   text-align: center;
   font-size: 2vw;
 }
-.vit-health-wheel-container .vit-health-wheel-overlay .vit-health-wheel-honeycomb-cont .honeycomb-grid .honeycomb-row .honeycomb-holder.animate-honeycomb {
-  display: flex !important;
-  animation-name: grow-animate;
-  animation-duration: 1s;
-  animation-iteration-count: 1;
-}
 .vit-health-wheel-container .vit-health-wheel-overlay .pulse {
   opacity: 1 !important;
 }
@@ -171,7 +171,7 @@
   position: absolute;
   justify-content: center;
   align-items: center;
-  display: none;
+  display: flex;
 }
 .vit-health-wheel-container .vit-health-wheel-overlay .vit-health-wheel-hotspot.animate-hotspot {
   display: flex !important;
@@ -179,11 +179,19 @@
   animation-duration: 1s;
   animation-iteration-count: 1;
 }
+.vit-health-wheel-container .vit-health-wheel-overlay .vit-health-wheel-hotspot.pulse-animate {
+  animation-name: pulse-grow-animate;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+}
 .vit-health-wheel-container .vit-health-wheel-overlay .vit-health-wheel-hotspot.light-blue {
   background-color: #dbe0ee;
 }
 .vit-health-wheel-container .vit-health-wheel-overlay .vit-health-wheel-hotspot.visible {
-  opacity: 1;
+  display: flex !important;
+}
+.vit-health-wheel-container .vit-health-wheel-overlay .vit-health-wheel-hotspot.hidden {
+  display: none !important;
 }
 .vit-health-wheel-container .vit-health-wheel-overlay .vit-health-wheel-hotspot .hs-icon {
   font-size: 6.5vw;
@@ -199,13 +207,6 @@
 .vit-health-wheel-container .vit-health-wheel-overlay .vit-health-wheel-hotspot .hs-icon-svg {
   width: 6.5vw;
   color: #4c4d4f;
-  opacity: 0.3;
-}
-.vit-health-wheel-container .vit-health-wheel-overlay .vit-health-wheel-hotspot .hs-icon-svg.unselected {
-  opacity: 0.3;
-}
-.vit-health-wheel-container .vit-health-wheel-overlay .vit-health-wheel-hotspot .hs-icon-svg.selected {
-  opacity: 1;
 }
 .vit-health-wheel-container .vit-health-wheel-overlay .vit-health-wheel-hotspot[data-animation-index="0"] {
   left: -31vw;
@@ -317,6 +318,17 @@
     opacity: 1;
   }
 }
+@keyframes pulse-grow-animate {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
 /******************************************* ANIMATIONS: END ************************************************/
 /******************************************* SLIDER: START ************************************************/
 .animate {
@@ -337,8 +349,8 @@
 }
 
 .holder {
-  width: calc(80vw * 16);
-  max-height: 500px;
+  width: calc(90vw * 16);
+  max-height: 40vw;
   height: 100%;
   overflow-y: hidden;
 }
@@ -347,10 +359,13 @@
   display: flex;
   justify-content: center;
   margin-top: 5vw;
+  animation-name: grow-animate;
+  animation-duration: 1s;
+  animation-iteration-count: 1;
 }
 .rck-slider-container .slider-wrap {
-  width: 80vw;
-  height: 60vw;
+  width: 90vw;
+  height: 30vw;
   position: absolute;
 }
 .rck-slider-container .slider-wrap .slider {
@@ -359,10 +374,9 @@
   overflow: hidden;
 }
 .rck-slider-container .slider-wrap .slider .slide-wrapper {
-  width: 80vw;
+  width: 90vw;
   height: 100%;
   float: left;
-  height: 500px;
   position: relative;
   overflow: hidden;
 }
@@ -373,22 +387,30 @@
 .rck-slider-container .slider-wrap .slider .slide-wrapper .slide {
   position: relative;
   font-family: Sans-serif;
+  -webkit-box-shadow: 0px 0px 12px 2px #e0e0e0;
+  -moz-box-shadow: 0px 0px 12px 2px #e0e0e0;
+  box-shadow: 0px 0px 12px 2px #e0e0e0;
+  margin: 0 auto;
+  top: 3vw;
+  border-radius: 10px;
+  width: 90%;
 }
 .rck-slider-container .slider-wrap .slider .slide-wrapper .slide .slide-content {
   display: flex;
   line-height: 1;
+  padding: 1em 0;
 }
 .rck-slider-container .slider-wrap .slider .slide-wrapper .slide .slide-content .sl-con-icon {
   max-width: 11vw;
 }
 .rck-slider-container .slider-wrap .slider .slide-wrapper .slide .slide-content .sl-con-left {
   flex: 1;
-  padding: 1em;
+  padding: 0 1em;
   border-right: 1px solid grey;
 }
 .rck-slider-container .slider-wrap .slider .slide-wrapper .slide .slide-content .sl-con-right {
   flex: 4;
-  padding: 1em;
+  padding: 0 1em;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -402,5 +424,9 @@
 }
 
 /******************************************* SLIDER: END ************************************************/
+/******************************************* SVG: START ************************************************/
+svg path {
+  fill: #f15922 !important;
+}
 
 /*# sourceMappingURL=vitality-wheel-journey.css.map */
