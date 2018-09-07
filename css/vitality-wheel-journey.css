@@ -172,6 +172,7 @@
   justify-content: center;
   align-items: center;
   display: flex;
+  -webkit-tap-highlight-color: transparent;
 }
 .vit-health-wheel-container .vit-health-wheel-overlay .vit-health-wheel-hotspot.animate-hotspot {
   display: flex !important;
@@ -206,6 +207,14 @@
 }
 .vit-health-wheel-container .vit-health-wheel-overlay .vit-health-wheel-hotspot .hs-icon-svg {
   width: 6.5vw;
+  color: #4c4d4f;
+}
+.vit-health-wheel-container .vit-health-wheel-overlay .vit-health-wheel-hotspot .hs-icon-svg-small {
+  width: 9vw;
+  color: #4c4d4f;
+}
+.vit-health-wheel-container .vit-health-wheel-overlay .vit-health-wheel-hotspot .hs-icon-svg-small-inner {
+  width: 7.5vw;
   color: #4c4d4f;
 }
 .vit-health-wheel-container .vit-health-wheel-overlay .vit-health-wheel-hotspot[data-animation-index="0"] {
@@ -323,7 +332,7 @@
     transform: scale(1);
   }
   50% {
-    transform: scale(1.2);
+    transform: scale(1.4);
   }
   100% {
     transform: scale(1);
@@ -350,7 +359,7 @@
 
 .holder {
   width: calc(90vw * 16);
-  max-height: 40vw;
+  max-height: 60vw;
   height: 100%;
   overflow-y: hidden;
 }
@@ -365,7 +374,7 @@
 }
 .rck-slider-container .slider-wrap {
   width: 90vw;
-  height: 30vw;
+  height: 50vw;
   position: absolute;
 }
 .rck-slider-container .slider-wrap .slider {
@@ -421,6 +430,37 @@
 .rck-slider-container .slider-wrap .slider .slide-wrapper .slide .slide-content .footer {
   color: #f15922;
   font-style: italic;
+}
+
+.rck-vh-wheel-journey-slide-breadcrumb-container {
+  width: 100%;
+  position: absolute;
+}
+.rck-vh-wheel-journey-slide-breadcrumb-container .breadcrumb-inner {
+  top: -15vw;
+  position: absolute;
+  width: 100%;
+}
+.rck-vh-wheel-journey-slide-breadcrumb-container .breadcrumb-inner .breadcrumb-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.rck-vh-wheel-journey-slide-breadcrumb-container .breadcrumb-inner .breadcrumb-wrapper .arrow {
+  color: #4c4d4f;
+  font-size: 2em;
+}
+.rck-vh-wheel-journey-slide-breadcrumb-container .breadcrumb-inner .breadcrumb-wrapper .dot-container {
+  display: flex;
+  justify-content: space-evenly;
+  margin-bottom: 1vw;
+}
+.rck-vh-wheel-journey-slide-breadcrumb-container .breadcrumb-inner .breadcrumb-wrapper .dot-container .dot {
+  border-radius: 50%;
+  border: 1px solid #4c4d4f;
+  width: 1.5vw;
+  height: 1.5vw;
+  margin: 0 0.5vw;
 }
 
 /******************************************* SLIDER: END ************************************************/

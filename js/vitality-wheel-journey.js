@@ -25,10 +25,10 @@ jQuery(document).ready(function ($) {
             //     $(`.${hotspotClass}[${hotspotAnimationIdAttr}="${nextIndex}"]`).addClass("pulse");
             // }
             $(`.${hotspotClass}`).removeClass("pulse-animate");
-            $(`.${hotspotClass}[${hotspotAnimationIdAttr}="${currentIndex}"]`).removeClass("pulse-animate");
-            if (nextIndex < hotspotElLength) {
-                $(`.${hotspotClass}[${hotspotAnimationIdAttr}="${nextIndex}"]`).addClass("pulse-animate");
-            }
+            // $(`.${hotspotClass}[${hotspotAnimationIdAttr}="${}"]`).removeClass("pulse-animate");
+            // if (nextIndex < hotspotElLength) {
+                $(`.${hotspotClass}[${hotspotAnimationIdAttr}="${currentIndex}"]`).addClass("pulse-animate");
+            // }
         }
     };
 
@@ -50,7 +50,7 @@ jQuery(document).ready(function ($) {
         });
 
         setTimeout(function () {
-            $(`.${hotspotClass}[${hotspotAnimationIdAttr}="1"]`).addClass("pulse-animate");
+            $(`.${hotspotClass}[${hotspotAnimationIdAttr}="0"]`).addClass("pulse-animate");
             $(`.${hotspotClass}`).removeClass("animate-hotspot").addClass("visible");
         }, 3500);
     };

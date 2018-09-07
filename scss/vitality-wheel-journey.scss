@@ -216,6 +216,9 @@ $vitality-light-blue: #dbe0ee;
       display: flex;
       //opacity: 0;
 
+      -webkit-tap-highlight-color: transparent;
+
+
       &.animate-hotspot {
         display: flex !important;
         animation-name: grow-animate;
@@ -269,6 +272,16 @@ $vitality-light-blue: #dbe0ee;
           //opacity: 1;
         }
 
+      }
+
+      .hs-icon-svg-small {
+        width: 9vw;
+        color: $discovery-dark-grey;
+      }
+
+      .hs-icon-svg-small-inner {
+        width: 7.5vw;
+        color: $discovery-dark-grey;
       }
 
     }
@@ -409,7 +422,7 @@ $vitality-light-blue: #dbe0ee;
   }
 
   50% {
-    transform: scale(1.2);
+    transform: scale(1.4);
   }
 
 
@@ -447,7 +460,7 @@ $slider-width: 90vw;
 
 .holder {
   width: calc(90vw * 16);
-  max-height: 40vw;
+  max-height: 60vw;
   height: 100%;
   overflow-y: hidden;
 }
@@ -462,7 +475,7 @@ $slider-width: 90vw;
 
   .slider-wrap {
     width: $slider-width;
-    height: 30vw;
+    height: 50vw;
     position: absolute;
     //left: 50%;
     //margin-left: -150px;
@@ -538,6 +551,43 @@ $slider-width: 90vw;
 
       }
     }
+  }
+}
+
+.rck-vh-wheel-journey-slide-breadcrumb-container {
+  width: 100%;
+  position: absolute;
+
+  .breadcrumb-inner {
+    top: -15vw;
+    position: absolute;
+    width: 100%;
+
+    .breadcrumb-wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      .arrow {
+        color: $discovery-dark-grey;
+        font-size: 2em;
+      }
+
+      .dot-container {
+        display: flex;
+        justify-content: space-evenly;
+        margin-bottom: 1vw;
+
+        .dot {
+          border-radius: 50%;
+          border: 1px solid $discovery-dark-grey;
+          width: 1.5vw;
+          height: 1.5vw;
+          margin: 0 0.5vw;
+        }
+      }
+    }
+
   }
 }
 
