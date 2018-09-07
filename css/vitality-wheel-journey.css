@@ -49,7 +49,6 @@
 
 .circular-label {
   fill: #4c4d4f;
-  font-family: sans-serif;
   font-size: 0.3em;
   text-anchor: middle;
   color: #4c4d4f;
@@ -57,7 +56,6 @@
 
 .percentage {
   fill: #f15922;
-  font-family: sans-serif;
   font-size: 0.5em;
   text-anchor: middle;
   color: #f15922;
@@ -78,7 +76,6 @@
 /*************************** CIRCULAR PROGRESS BAR STYLES: END *************************/
 .vit-health-wheel-container {
   position: relative;
-  font-family: "Open Sans", sans-serif;
 }
 .vit-health-wheel-container .vit-health-wheel-disc {
   width: 90vw;
@@ -351,7 +348,6 @@
 
 .holder {
   width: calc(90vw * 16);
-  max-height: 60vw;
   height: 100%;
   overflow-y: hidden;
 }
@@ -359,7 +355,9 @@
 .rck-slider-container {
   display: flex;
   justify-content: center;
+  align-items: center;
   margin-top: 5vw;
+  flex-direction: column;
 }
 .rck-slider-container.rck-slider-container-animate {
   animation-name: grow-animate;
@@ -368,7 +366,6 @@
 }
 .rck-slider-container .rck-slider-wrap {
   width: 90vw;
-  height: 50vw;
   position: relative;
 }
 .rck-slider-container .rck-slider-wrap .rck-slider {
@@ -388,12 +385,10 @@
   justify-content: flex-end;
 }
 .rck-slider-container .rck-slider-wrap .rck-slider .rck-slide-wrapper .rck-slide {
-  position: relative;
-  font-family: Sans-serif;
   -webkit-box-shadow: 0px 0px 12px 2px #e0e0e0;
   -moz-box-shadow: 0px 0px 12px 2px #e0e0e0;
   box-shadow: 0px 0px 12px 2px #e0e0e0;
-  margin: 0 auto;
+  margin: 5vw auto;
   top: 3vw;
   border-radius: 10px;
   width: 90%;
@@ -428,11 +423,9 @@
 
 .rck-vh-wheel-journey-slide-breadcrumb-container {
   width: 100%;
-  position: absolute;
 }
 .rck-vh-wheel-journey-slide-breadcrumb-container .breadcrumb-inner {
   top: -15vw;
-  position: absolute;
   width: 100%;
 }
 .rck-vh-wheel-journey-slide-breadcrumb-container .breadcrumb-inner .breadcrumb-wrapper {
