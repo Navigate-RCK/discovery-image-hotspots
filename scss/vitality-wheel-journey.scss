@@ -215,9 +215,7 @@ $vitality-light-blue: #dbe0ee;
       align-items: center;
       display: flex;
       //opacity: 0;
-
       -webkit-tap-highlight-color: transparent;
-
 
       &.animate-hotspot {
         display: flex !important;
@@ -571,6 +569,8 @@ $slider-width: 90vw;
       .arrow {
         color: $discovery-dark-grey;
         font-size: 2em;
+        cursor: pointer;
+        -webkit-tap-highlight-color: transparent;
       }
 
       .dot-container {
@@ -584,6 +584,10 @@ $slider-width: 90vw;
           width: 1.5vw;
           height: 1.5vw;
           margin: 0 0.5vw;
+
+          &.selected {
+            background-color: $discovery-dark-grey;
+          }
         }
       }
     }

@@ -1,4 +1,3 @@
-
 jQuery(document).ready(function ($) {
 
     console.log("document ready");
@@ -14,22 +13,19 @@ jQuery(document).ready(function ($) {
     var hsIcon = "hs-icon";
     var hsIconSvg = "hs-icon-svg";
     var sliderContainerClass = "rck-slider-container";
+    var dotClass = "dot";
+    var selectedClass = "selected";
+    var arrowClass = "arrow";
 
-    var pulseSelected = function (currentIndex, nextIndex) {
-        if (nextIndex <= hotspotElLength) {
-            // $(`.${hotspotClass}`).find(`.${hsIcon}, .${hsIconSvg}`).removeClass("selected").addClass("unselected");
-            // $(`.${hotspotClass}[${hotspotAnimationIdAttr}="${currentIndex}"]`).find(`.${hsIcon}`).removeClass("unselected").addClass("selected");
-            // $(`.${hotspotClass}`).removeClass("pulse");
-            // $(`.${hotspotClass}[${hotspotAnimationIdAttr}="${currentIndex}"]`).removeClass("pulse");
-            // if (nextIndex < hotspotElLength-1) {
-            //     $(`.${hotspotClass}[${hotspotAnimationIdAttr}="${nextIndex}"]`).addClass("pulse");
-            // }
-            $(`.${hotspotClass}`).removeClass("pulse-animate");
-            // $(`.${hotspotClass}[${hotspotAnimationIdAttr}="${}"]`).removeClass("pulse-animate");
-            // if (nextIndex < hotspotElLength) {
-                $(`.${hotspotClass}[${hotspotAnimationIdAttr}="${currentIndex}"]`).addClass("pulse-animate");
-            // }
-        }
+    var pulseSelected = function (currentIndex) {
+        $(`.${hotspotClass}`).removeClass("pulse-animate");
+        $(`.${hotspotClass}[${hotspotAnimationIdAttr}="${currentIndex}"]`).addClass("pulse-animate");
+        selectBreadCrumb(currentIndex);
+    };
+
+    var selectBreadCrumb = function (index) {
+        $(`.${dotClass}`).removeClass(selectedClass);
+        $(`.${dotClass}[${hotspotAnimationIdAttr}="${index}"]`).addClass(selectedClass);
     };
 
     var showIcons = function () {
@@ -180,41 +176,36 @@ jQuery(document).ready(function ($) {
         var prevIndex = currentIndex - 1;
         var nextIndex = currentIndex + 1;
 
-        pulseSelected(currentIndex, nextIndex);
+        pulseSelected(currentIndex);
 
         slideOnClick(currentIndex);
     });
 
-    // $(hotspotEl).click(function () {
-    //     var $img = jQuery(this).find(`.${hsIconSvg}`);
-    //     var imgID = $img.attr('id');
-    //     var imgClass = $img.attr('class');
-    //     var imgURL = $img.attr('src');
-    //
-    //     jQuery.get(imgURL, function (data) {
-    //         // Get the SVG tag, ignore the rest
-    //         var $svg = jQuery(data).find('svg');
-    //
-    //         // Add replaced image's ID to the new SVG
-    //         if (typeof imgID !== 'undefined') {
-    //             $svg = $svg.attr('id', imgID);
-    //         }
-    //         // Add replaced image's classes to the new SVG
-    //         if (typeof imgClass !== 'undefined') {
-    //             $svg = $svg.attr('class', imgClass + ' replaced-svg');
-    //         }
-    //
-    //         // Remove any invalid XML tags as per http://validator.w3.org
-    //         $svg = $svg.removeAttr('xmlns:a');
-    //
-    //         // Check if the viewport is set, else we gonna set it if we can.
-    //         if (!$svg.attr('viewBox') && $svg.attr('height') && $svg.attr('width')) {
-    //             $svg.attr('viewBox', '0 0 ' + $svg.attr('height') + ' ' + $svg.attr('width'))
-    //         }
-    //
-    //         // Replace image with new SVG
-    //         $img.replaceWith($svg);
-    //
-    //     }, 'xml');
-    // });
+    $(`.${arrowClass}`).click(function () {
+        var dotEl = $(this).parent().find($(`.${dotClass}`));
+        var currentIndex;
+        $(dotEl).each(function (index) {
+            console.log(`dot index: ${$(this).attr(hotspotAnimationIdAttr)}`);
+           if ($(this).hasClass(`selected`)){
+               currentIndex = index;
+               console.log(`selected dot index: ${index}`);
+           }
+        });
+        var nextIndex = currentIndex + 1;
+        var prevIndex = currentIndex - 1;
+
+        if (currentIndex === 0)
+            prevIndex = dotEl.length - 1;
+
+        if (currentIndex === dotEl.length - 1)
+            nextIndex = 0;
+
+        if ($(this).hasClass("left")) {
+            pulseSelected(prevIndex);
+            slideOnClick(prevIndex);
+        } else if ($(this).hasClass("right")) {
+            pulseSelected(nextIndex);
+            slideOnClick(nextIndex);
+        }
+    });
 });

@@ -449,6 +449,8 @@
 .rck-vh-wheel-journey-slide-breadcrumb-container .breadcrumb-inner .breadcrumb-wrapper .arrow {
   color: #4c4d4f;
   font-size: 2em;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
 }
 .rck-vh-wheel-journey-slide-breadcrumb-container .breadcrumb-inner .breadcrumb-wrapper .dot-container {
   display: flex;
@@ -461,6 +463,9 @@
   width: 1.5vw;
   height: 1.5vw;
   margin: 0 0.5vw;
+}
+.rck-vh-wheel-journey-slide-breadcrumb-container .breadcrumb-inner .breadcrumb-wrapper .dot-container .dot.selected {
+  background-color: #4c4d4f;
 }
 
 /******************************************* SLIDER: END ************************************************/
