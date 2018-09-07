@@ -9,31 +9,100 @@ body {
 }
 
 .vh-phone-hs {
-  width: 80vw;
+  width: 90vw;
   margin: 1vw auto;
+}
+.vh-phone-hs .vh-phone-hs-rewards-section {
+  margin-bottom: 5vw;
   background-color: white;
 }
-.vh-phone-hs .vh-phone-hs-section .vh-phone-hs-section-heading {
+.vh-phone-hs .vh-phone-hs-rewards-section .vh-phone-hs-rewards-heading {
   display: flex;
 }
-.vh-phone-hs .vh-phone-hs-section .vh-phone-hs-section-heading .heading-title {
+.vh-phone-hs .vh-phone-hs-rewards-section .vh-phone-hs-rewards-heading .heading-title {
   flex: 2;
 }
-.vh-phone-hs .vh-phone-hs-section .vh-phone-hs-section-heading .heading-icon-container {
+.vh-phone-hs .vh-phone-hs-rewards-section .vh-phone-hs-rewards-heading .heading-icon-container {
   flex: 1;
   display: flex;
 }
-.vh-phone-hs .vh-phone-hs-section .vh-phone-hs-section-heading .heading-icon-container .heading-icon-wrapper {
+.vh-phone-hs .vh-phone-hs-rewards-section .vh-phone-hs-rewards-heading .heading-icon-container .heading-icon-wrapper {
   display: flex;
 }
-.vh-phone-hs .vh-phone-hs-section .vh-phone-hs-section-body .vh-phone-hs-rewards-container {
+.vh-phone-hs .vh-phone-hs-rewards-section .vh-phone-hs-rewards-body {
   display: flex;
-  align-items: center;
   justify-content: center;
 }
-.vh-phone-hs .vh-phone-hs-section .vh-phone-hs-section-body .vh-phone-hs-rewards-container .vh-phone-hs-rewards-container-inner {
+.vh-phone-hs .vh-phone-hs-rewards-section .vh-phone-hs-rewards-body .vh-phone-hs-rewards-container {
+  position: relative;
+  width: 60vw;
+  height: 60vw;
+}
+.vh-phone-hs .vh-phone-hs-rewards-section .vh-phone-hs-rewards-body .vh-phone-hs-rewards-container .ring-outer {
   width: 100%;
   height: 100%;
+  animation-name: grow-animate;
+  animation-duration: 1s;
+  animation-iteration-count: 1;
+}
+.vh-phone-hs .vh-phone-hs-rewards-section .vh-phone-hs-rewards-body .vh-phone-hs-rewards-container .ring-inner-container {
+  position: absolute;
+  top: 0;
+  width: 60vw;
+  height: 60vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.vh-phone-hs .vh-phone-hs-rewards-section .vh-phone-hs-rewards-body .vh-phone-hs-rewards-container .ring-inner-container .ring-inner {
+  width: 60vw;
+  animation-name: grow-animate;
+  animation-duration: 1s;
+  animation-iteration-count: 1;
+}
+.vh-phone-hs .vh-phone-hs-rewards-section .vh-phone-hs-rewards-body .vh-phone-hs-rewards-container .ring-inner-container .trophy-container {
+  position: absolute;
+  top: 0;
+  width: 60vw;
+  height: 60vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.vh-phone-hs .vh-phone-hs-rewards-section .vh-phone-hs-rewards-body .vh-phone-hs-rewards-container .ring-inner-container .trophy-container .trophy {
+  width: 15vw;
+}
+.vh-phone-hs .vh-phone-hs-badges-section {
+  background-color: white;
+}
+.vh-phone-hs .vh-phone-hs-badges-section .vh-phone-hs-badges-section-body .badges-container {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 2vw 5vw;
+}
+.vh-phone-hs .vh-phone-hs-badges-section .vh-phone-hs-badges-section-body .badges-container .badge {
+  animation-name: grow-animate;
+  animation-duration: 1s;
+  animation-iteration-count: 1;
+}
+.vh-phone-hs .vh-phone-hs-badges-section .vh-phone-hs-badges-section-body .badges-container .badge img {
+  width: 10vw;
+}
+
+.rck-slider-container {
+  background-color: white;
+}
+
+.animate-grow {
+  animation-name: grow-animate;
+  animation-duration: 1s;
+  animation-iteration-count: 1;
+}
+
+.animate-pulse {
+  animation-name: pulse-grow-animate;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
 }
 
 /*# sourceMappingURL=vitality-phone-hotspot.css.map */

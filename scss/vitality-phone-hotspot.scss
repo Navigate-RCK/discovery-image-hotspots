@@ -18,13 +18,14 @@ $vit-drive-light-purple: #a863a8;
 }
 
 .vh-phone-hs {
-  width: 80vw;
+  width: 90vw;
   margin: 1vw auto;
-  background-color: white;
 
-  .vh-phone-hs-section {
+  .vh-phone-hs-rewards-section {
+    margin-bottom: 5vw;
+    background-color: white;
 
-    .vh-phone-hs-section-heading {
+    .vh-phone-hs-rewards-heading {
       display: flex;
 
       .heading-title {
@@ -49,19 +50,108 @@ $vit-drive-light-purple: #a863a8;
       }
     }
 
-    .vh-phone-hs-section-body {
+    .vh-phone-hs-rewards-body {
+      display: flex;
+      justify-content: center;
 
       .vh-phone-hs-rewards-container {
-        display: flex;
-        align-items: center;
-        justify-content: center;
+        position: relative;
+        width: 60vw;
+        height: 60vw;
+        //background-color: grey;
 
-        .vh-phone-hs-rewards-container-inner {
+        .ring-outer {
           width: 100%;
           height: 100%;
+          animation-name: grow-animate;
+          animation-duration: 1s;
+          animation-iteration-count: 1;
         }
-      }
 
+        .ring-inner-container {
+          position: absolute;
+          top: 0;
+          width: 60vw;
+          height: 60vw;
+          //background-color: #2E2A69;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+
+          .ring-inner {
+            width: 60vw;
+            animation-name: grow-animate;
+            animation-duration: 1s;
+            animation-iteration-count: 1;
+          }
+
+          .trophy-container {
+            position: absolute;
+            top: 0;
+            width: 60vw;
+            height: 60vw;
+            //background-color: #036913;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            .trophy {
+              width: 15vw;
+            }
+          }
+        }
+
+      }
     }
   }
+
+  .vh-phone-hs-badges-section {
+    background-color: white;
+
+    .vh-phone-hs-badges-heading {
+
+      .heading-title {
+
+      }
+
+      .heading-icon-container {
+
+      }
+    }
+
+    .vh-phone-hs-badges-section-body {
+
+      .badges-container {
+        display: flex;
+        justify-content: space-evenly;
+        padding: 2vw 5vw;
+
+        .badge {
+          animation-name: grow-animate;
+          animation-duration: 1s;
+          animation-iteration-count: 1;
+
+          img {
+            width: 10vw;
+          }
+        }
+      }
+    }
+  }
+}
+
+.rck-slider-container {
+  background-color: white;
+}
+
+.animate-grow {
+  animation-name: grow-animate;
+  animation-duration: 1s;
+  animation-iteration-count: 1;
+}
+
+.animate-pulse {
+  animation-name: pulse-grow-animate;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
 }
