@@ -97,6 +97,7 @@ $vitality-light-blue: #dbe0ee;
 
 .vit-health-wheel-container {
   position: relative;
+  font-family: "Open Sans", sans-serif;
 
   .vit-health-wheel-disc {
     //background: $vitality-light-blue;
@@ -110,9 +111,13 @@ $vitality-light-blue: #dbe0ee;
 
     .vit-wheel-disc-bg-img {
       width: 100%;
-      animation-name: grow-animate;
-      animation-duration: 1s;
-      animation-iteration-count: 1;
+
+      &.vit-wheel-disc-animate {
+        animation-name: grow-animate;
+        animation-duration: 1s;
+        animation-iteration-count: 1;
+      }
+
     }
 
     .disc-inner {
@@ -137,47 +142,41 @@ $vitality-light-blue: #dbe0ee;
 
     .vit-health-wheel-honeycomb-cont {
       /* background: grey; */
-      top: -16vw;
-      left: -12vw;
+      top: -11vw;
+      left: -9vw;
       position: absolute;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      //display: flex;
+      //flex-direction: column;
+      //align-items: center;
+      //justify-content: center;
 
-      .honeycomb-grid {
-        font-family: Sans-serif;
+      .honeycomb-holder:not(last-child) {
+        //margin-right: 4vw;
+      }
 
-        .honeycomb-row:not(last-child) {
-          margin-bottom: 2vw;
+      .honeycomb-holder {
+        //width: 50%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: absolute;
+        width: 18vw;
+        top: 0;
+
+        &.hidden {
+          display: none;
         }
 
-        .honeycomb-row {
-          display: flex;
-          align-items: flex-end;
-          //justify-content: center;
+        .honeycomb-icon {
+          width: 12vw;
+          height: 12vw;
+          margin-bottom: 1vw;
+          //margin-top:0.5vw;
+        }
 
-          .honeycomb-holder:not(last-child) {
-            margin-right: 4vw;
-          }
-
-          .honeycomb-holder {
-            //width: 50%;
-            display: none;
-            flex-direction: column;
-            align-items: center;
-
-            .honeycomb-icon {
-              width: 8vw;
-              height: 8vw;
-              margin-bottom: 0.5vw;
-              margin-top:0.5vw;
-            }
-
-            .honeycomb-label {
-              text-align: center;
-              font-size: 2vw;
-            }
-          }
+        .honeycomb-label {
+          text-align: center;
+          font-size: 3vw;
         }
       }
     }
@@ -437,7 +436,7 @@ $vitality-light-blue: #dbe0ee;
   transition: transform 0.3s ease-out;
 }
 
-.ms-touch.slider {
+.ms-touch.rck-slider {
   overflow-x: scroll;
   overflow-y: hidden;
 
@@ -467,25 +466,29 @@ $slider-width: 90vw;
   display: flex;
   justify-content: center;
   margin-top: 5vw;
-  animation-name: grow-animate;
-  animation-duration: 1s;
-  animation-iteration-count: 1;
 
-  .slider-wrap {
+
+  &.rck-slider-container-animate {
+    animation-name: grow-animate;
+    animation-duration: 1s;
+    animation-iteration-count: 1;
+  }
+
+  .rck-slider-wrap {
     width: $slider-width;
     height: 50vw;
-    position: absolute;
+    position: relative;
     //left: 50%;
     //margin-left: -150px;
     //top: 50%;
     //margin-top: -225px;
 
-    .slider {
+    .rck-slider {
       width: 100%;
       height: 100%;
       overflow: hidden;
 
-      .slide-wrapper {
+      .rck-slide-wrapper {
         width: $slider-width;
         height: 100%;
         float: left;
@@ -497,7 +500,7 @@ $slider-width: 90vw;
           justify-content: flex-end;
         }
 
-        .slide {
+        .rck-slide {
           //height: 100%;
           position: relative;
           font-family: Sans-serif;
@@ -509,7 +512,7 @@ $slider-width: 90vw;
           border-radius: 10px;
           width: 90%;
 
-          .slide-content {
+          .rck-slide-content {
             display: flex;
             line-height: 1;
             padding: 1em 0;
@@ -621,4 +624,4 @@ $slider-width: 90vw;
 /******************************************* SLIDER: END ************************************************/
 
 /******************************************* SVG: START ************************************************/
-svg path {fill: #f15922 !important;}
+//svg path {fill: #f15922 !important;}

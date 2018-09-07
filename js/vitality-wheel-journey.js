@@ -1,11 +1,14 @@
 jQuery(document).ready(function ($) {
-
     console.log("document ready");
+
+    var iconsAnimatedFlag = false;
 
     var vitHealthPopup = "vit-health-popup";
     var vitHealthContent = "vit-health-popup-content";
+    var vitWheelDiscClass = "vit-wheel-disc-bg-img";
     var hotspotClass = "vit-health-wheel-hotspot";
     var hotspotAnimationIdAttr = "data-animation-index";
+    var honeyCombContainerClass = "vit-health-wheel-honeycomb-cont";
     var honeyCombClass = "honeycomb-holder";
     var honeycombAnimationIdAttr = "data-honeycomb-animation-index";
     var hotspotEl = $(`.${hotspotClass}[${hotspotAnimationIdAttr}]`);
@@ -13,6 +16,7 @@ jQuery(document).ready(function ($) {
     var hsIcon = "hs-icon";
     var hsIconSvg = "hs-icon-svg";
     var sliderContainerClass = "rck-slider-container";
+    var sliderContainerAnimate = "rck-slider-container-animate";
     var dotClass = "dot";
     var selectedClass = "selected";
     var arrowClass = "arrow";
@@ -28,15 +32,38 @@ jQuery(document).ready(function ($) {
         $(`.${dotClass}[${hotspotAnimationIdAttr}="${index}"]`).addClass(selectedClass);
     };
 
+    var animateHoneyComb = function () {
+        $(`.${honeyCombClass}:gt(0)`).hide();
+        setInterval(function () {
+            $(`.${honeyCombClass}:first`)
+                .fadeOut(2000)
+                .next()
+                .fadeIn(2000)
+                .end()
+                .appendTo(`.${honeyCombContainerClass}`);
+        }, 4000);
+    };
+
+    var hideIcons = function() {
+        $(`.${vitWheelDiscClass}`).hide();
+        // $(`.${sliderContainerClass}`).hide();
+        $(`.${honeyCombContainerClass}`).hide();
+    };
+
     var showIcons = function () {
         var delay = 300;
 
-        $(`.${honeyCombClass}`).each(function (index) {
-            setTimeout(function () {
-                $(`.${honeyCombClass}[${honeycombAnimationIdAttr}="${index}"]`).addClass("animate-honeycomb")
-            }, delay);
-            delay += (100 + (2 * (index + 1)));
-        });
+        // $(`.${honeyCombClass}`).each(function (index) {
+        //     setTimeout(function () {
+        //         $(`.${honeyCombClass}[${honeycombAnimationIdAttr}="${index}"]`).addClass("animate-honeycomb")
+        //     }, delay);
+        //     delay += (100 + (2 * (index + 1)));
+        // });
+        $(`.${vitWheelDiscClass}`).show();
+        $(`.${vitWheelDiscClass}`).addClass("vit-wheel-disc-animate");
+        // $(`.${sliderContainerClass}`).show();
+        // $(`.${sliderContainerClass}`).addClass(sliderContainerAnimate);
+        $(`.${honeyCombContainerClass}`).fadeIn(2000);
 
         $(`.${hotspotClass}`).each(function (index) {
             setTimeout(function () {
@@ -51,7 +78,8 @@ jQuery(document).ready(function ($) {
         }, 3500);
     };
 
-    showIcons();
+    // showIcons();
+    animateHoneyComb();
 
     var slider;
     if (navigator.msMaxTouchPoints) {
@@ -64,7 +92,7 @@ jQuery(document).ready(function ($) {
 
     } else {
 
-        var slideLength = $(".slide-wrapper").length;
+        var slideLength = $(".rck-slide-wrapper").length;
 
         slider = {
 
@@ -186,10 +214,10 @@ jQuery(document).ready(function ($) {
         var currentIndex;
         $(dotEl).each(function (index) {
             console.log(`dot index: ${$(this).attr(hotspotAnimationIdAttr)}`);
-           if ($(this).hasClass(`selected`)){
-               currentIndex = index;
-               console.log(`selected dot index: ${index}`);
-           }
+            if ($(this).hasClass(`selected`)) {
+                currentIndex = index;
+                console.log(`selected dot index: ${index}`);
+            }
         });
         var nextIndex = currentIndex + 1;
         var prevIndex = currentIndex - 1;
@@ -208,4 +236,48 @@ jQuery(document).ready(function ($) {
             slideOnClick(nextIndex);
         }
     });
+
+    var animateHTML = function () {
+        var elems,
+            windowHeight;
+
+        hideIcons();
+        var init = function () {
+            // console.log("init called");
+            elems = document.getElementsByClassName("breadcrumb-inner");
+            // console.log(elems);
+            windowHeight = window.innerHeight;
+            _addEventHandlers();
+        };
+        var _addEventHandlers = function () {
+            // console.log("addEventHandlers");
+            window.addEventListener('scroll', _checkVitalityWheelPosition);
+            window.addEventListener('resize', init);
+        };
+        var _checkVitalityWheelPosition = function () {
+            for (var i = 0; i < elems.length; i++) {
+                if (elems[i]) {
+                    var posFromTop = elems[i].getBoundingClientRect().top;
+                    var posFromBottom = elems[i].getBoundingClientRect().bottom;
+                    if (i === 0) {
+                        // console.log(`[${i}] pos TOP: ${posFromTop}`);
+                        // console.log(`[${i}] pos Bottom: ${posFromBottom}`);
+                    }
+                    console.log(`pos Bottom: ${posFromBottom}`);
+                    console.log(`window height: ${windowHeight}`);
+                    if (posFromBottom <= windowHeight && !iconsAnimatedFlag) {
+                        console.log("VISIBLE");
+                        showIcons();
+                        iconsAnimatedFlag = true;
+                    }
+
+                }
+            }
+        };
+        return {
+            init: init
+        }
+    };
+    animateHTML().init();
 });
+

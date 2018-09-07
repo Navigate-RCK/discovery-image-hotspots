@@ -78,6 +78,7 @@
 /*************************** CIRCULAR PROGRESS BAR STYLES: END *************************/
 .vit-health-wheel-container {
   position: relative;
+  font-family: "Open Sans", sans-serif;
 }
 .vit-health-wheel-container .vit-health-wheel-disc {
   width: 90vw;
@@ -89,6 +90,8 @@
 }
 .vit-health-wheel-container .vit-health-wheel-disc .vit-wheel-disc-bg-img {
   width: 100%;
+}
+.vit-health-wheel-container .vit-health-wheel-disc .vit-wheel-disc-bg-img.vit-wheel-disc-animate {
   animation-name: grow-animate;
   animation-duration: 1s;
   animation-iteration-count: 1;
@@ -112,40 +115,29 @@
 }
 .vit-health-wheel-container .vit-health-wheel-overlay .vit-health-wheel-honeycomb-cont {
   /* background: grey; */
-  top: -16vw;
-  left: -12vw;
+  top: -11vw;
+  left: -9vw;
   position: absolute;
+}
+.vit-health-wheel-container .vit-health-wheel-overlay .vit-health-wheel-honeycomb-cont .honeycomb-holder {
   display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.vit-health-wheel-container .vit-health-wheel-overlay .vit-health-wheel-honeycomb-cont .honeycomb-grid {
-  font-family: Sans-serif;
-}
-.vit-health-wheel-container .vit-health-wheel-overlay .vit-health-wheel-honeycomb-cont .honeycomb-grid .honeycomb-row:not(last-child) {
-  margin-bottom: 2vw;
-}
-.vit-health-wheel-container .vit-health-wheel-overlay .vit-health-wheel-honeycomb-cont .honeycomb-grid .honeycomb-row {
-  display: flex;
-  align-items: flex-end;
-}
-.vit-health-wheel-container .vit-health-wheel-overlay .vit-health-wheel-honeycomb-cont .honeycomb-grid .honeycomb-row .honeycomb-holder:not(last-child) {
-  margin-right: 4vw;
-}
-.vit-health-wheel-container .vit-health-wheel-overlay .vit-health-wheel-honeycomb-cont .honeycomb-grid .honeycomb-row .honeycomb-holder {
-  display: none;
   flex-direction: column;
   align-items: center;
+  position: absolute;
+  width: 18vw;
+  top: 0;
 }
-.vit-health-wheel-container .vit-health-wheel-overlay .vit-health-wheel-honeycomb-cont .honeycomb-grid .honeycomb-row .honeycomb-holder .honeycomb-icon {
-  width: 8vw;
-  height: 8vw;
-  margin-bottom: 0.5vw;
-  margin-top: 0.5vw;
+.vit-health-wheel-container .vit-health-wheel-overlay .vit-health-wheel-honeycomb-cont .honeycomb-holder.hidden {
+  display: none;
 }
-.vit-health-wheel-container .vit-health-wheel-overlay .vit-health-wheel-honeycomb-cont .honeycomb-grid .honeycomb-row .honeycomb-holder .honeycomb-label {
+.vit-health-wheel-container .vit-health-wheel-overlay .vit-health-wheel-honeycomb-cont .honeycomb-holder .honeycomb-icon {
+  width: 12vw;
+  height: 12vw;
+  margin-bottom: 1vw;
+}
+.vit-health-wheel-container .vit-health-wheel-overlay .vit-health-wheel-honeycomb-cont .honeycomb-holder .honeycomb-label {
   text-align: center;
-  font-size: 2vw;
+  font-size: 3vw;
 }
 .vit-health-wheel-container .vit-health-wheel-overlay .pulse {
   opacity: 1 !important;
@@ -344,7 +336,7 @@
   transition: transform 0.3s ease-out;
 }
 
-.ms-touch.slider {
+.ms-touch.rck-slider {
   overflow-x: scroll;
   overflow-y: hidden;
   -ms-overflow-style: none;
@@ -368,32 +360,34 @@
   display: flex;
   justify-content: center;
   margin-top: 5vw;
+}
+.rck-slider-container.rck-slider-container-animate {
   animation-name: grow-animate;
   animation-duration: 1s;
   animation-iteration-count: 1;
 }
-.rck-slider-container .slider-wrap {
+.rck-slider-container .rck-slider-wrap {
   width: 90vw;
   height: 50vw;
-  position: absolute;
+  position: relative;
 }
-.rck-slider-container .slider-wrap .slider {
+.rck-slider-container .rck-slider-wrap .rck-slider {
   width: 100%;
   height: 100%;
   overflow: hidden;
 }
-.rck-slider-container .slider-wrap .slider .slide-wrapper {
+.rck-slider-container .rck-slider-wrap .rck-slider .rck-slide-wrapper {
   width: 90vw;
   height: 100%;
   float: left;
   position: relative;
   overflow: hidden;
 }
-.rck-slider-container .slider-wrap .slider .slide-wrapper .close-container {
+.rck-slider-container .rck-slider-wrap .rck-slider .rck-slide-wrapper .close-container {
   display: flex;
   justify-content: flex-end;
 }
-.rck-slider-container .slider-wrap .slider .slide-wrapper .slide {
+.rck-slider-container .rck-slider-wrap .rck-slider .rck-slide-wrapper .rck-slide {
   position: relative;
   font-family: Sans-serif;
   -webkit-box-shadow: 0px 0px 12px 2px #e0e0e0;
@@ -404,30 +398,30 @@
   border-radius: 10px;
   width: 90%;
 }
-.rck-slider-container .slider-wrap .slider .slide-wrapper .slide .slide-content {
+.rck-slider-container .rck-slider-wrap .rck-slider .rck-slide-wrapper .rck-slide .rck-slide-content {
   display: flex;
   line-height: 1;
   padding: 1em 0;
 }
-.rck-slider-container .slider-wrap .slider .slide-wrapper .slide .slide-content .sl-con-icon {
+.rck-slider-container .rck-slider-wrap .rck-slider .rck-slide-wrapper .rck-slide .rck-slide-content .sl-con-icon {
   max-width: 11vw;
 }
-.rck-slider-container .slider-wrap .slider .slide-wrapper .slide .slide-content .sl-con-left {
+.rck-slider-container .rck-slider-wrap .rck-slider .rck-slide-wrapper .rck-slide .rck-slide-content .sl-con-left {
   flex: 1;
   padding: 0 1em;
   border-right: 1px solid grey;
 }
-.rck-slider-container .slider-wrap .slider .slide-wrapper .slide .slide-content .sl-con-right {
+.rck-slider-container .rck-slider-wrap .rck-slider .rck-slide-wrapper .rck-slide .rck-slide-content .sl-con-right {
   flex: 4;
   padding: 0 1em;
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
-.rck-slider-container .slider-wrap .slider .slide-wrapper .slide .slide-content .heading {
+.rck-slider-container .rck-slider-wrap .rck-slider .rck-slide-wrapper .rck-slide .rck-slide-content .heading {
   font-weight: 600;
 }
-.rck-slider-container .slider-wrap .slider .slide-wrapper .slide .slide-content .footer {
+.rck-slider-container .rck-slider-wrap .rck-slider .rck-slide-wrapper .rck-slide .rck-slide-content .footer {
   color: #f15922;
   font-style: italic;
 }
@@ -470,8 +464,5 @@
 
 /******************************************* SLIDER: END ************************************************/
 /******************************************* SVG: START ************************************************/
-svg path {
-  fill: #f15922 !important;
-}
 
 /*# sourceMappingURL=vitality-wheel-journey.css.map */
